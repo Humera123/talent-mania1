@@ -1,0 +1,587 @@
+
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /* Style the form */
+.three-step-form #regForm {
+  background-color: #ffffff;
+  margin: 100px auto;
+  padding: 40px;
+  width: 70%;
+  min-width: 300px;
+}
+
+/* Style the input fields */
+.three-step-form #regForm input {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+}
+
+/* Mark input boxes that gets an error on validation: */
+.three-step-form #regForm input.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.three-step-form #regForm .tab {
+  display: none;
+  -webkit-animation-name: slideInRight;
+  animation-name: slideInRight;
+  -webkit-animation-duration: 500ms;
+  animation-duration: 500ms;
+}
+
+/* Make circles that indicate the steps of the form: */
+.three-step-form #regForm .step {
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  background-color: #bbbbbb;
+  border: none; 
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+/* Mark the active step: */
+.three-step-form #regForm .step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.three-step-form #regForm .step.finish {
+  background-color: #4CAF50;
+}
+
+#countryList {
+  width: 70%;
+  padding-left: 11%;
+}
+
+.circle
+{
+    width:40px;
+    height:auto;
+    border-radius:250px;
+    font-size:20px;
+    color:#fff;
+    text-align:center;
+    background:#30afb8
+}
+
+@-webkit-keyframes slideInRight {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInRight {
+  -webkit-animation-name: slideInRight;
+  animation-name: slideInRight;
+}
+
+#jobseeker_dashboard,#education,#exp,#skill,#paneL_dashboard,#companydashboard
+{
+  -webkit-animation-name: slideInRight;
+  animation-name: slideInRight;
+  -webkit-animation-duration: 500ms;
+  animation-duration: 500ms;
+}
+.container .navbar{
+  z-index: 55555;
+}
+.navbar  .navbar-brand{
+color:#007d91;
+font-size: 28px;
+font-weight:bold;
+font-family:arial;
+margin-left: 40px;
+}
+.navbar .collapse .navlink{
+height:22px;
+width:22px;
+ border: 2px solid #007d91;
+  }
+   .navbar .collapse .form-inline .btn {
+    display: inline-block;
+    vertical-align: top;
+    border: 2px solid #ffffff;
+    height: 46px;
+    line-height: 22px;
+    padding: 10px;
+    min-width: 46px;
+    color:#ffffff;
+    font-size: 14px;
+    font-weight:bold;
+    text-align: center;
+    position: relative;
+    margin-right: 100px;
+    margin-left: 40px;
+    margin-top: 150px;
+  }
+   .navbar .collapse .form-inline .btn:hover{
+    background-color:#007d91;
+border: 2px solid #007d91;
+     
+  }
+  .fa, .far, .fas {
+    font-weight: 900;
+    font-size: 29px;
+    color: white;
+    border: 2px solid #ffffff;
+     
+    padding-top: 6px;
+    padding-left: 5px;
+    padding-right: 5px;
+    min-width: 44px;
+    min-height: 46px;
+    display: inline-block;
+    align-content: center;
+  }
+ .fa, .far, .fas:hover{
+  background-color:#007d91;
+  color:white;
+  border: 2px solid #007d91; 
+     
+}
+.bannerImage{
+background-image:url("../images/recruitment.jpg");
+width: 100%;
+height: calc(100vh + 88px);
+background-size: cover;
+  position: absolute;
+  top: -88px;
+}
+ .signup .tagline{
+  color:white;
+  font-size: 30px;
+ padding-top: 20px;
+ margin-bottom: 20px;
+ margin-left: 460px;
+ margin-top: 200px;
+ 
+}
+.legaltext1{
+    font-size: 14px;
+    margin-left: 10px;
+    margin-top: 5px;
+    color:white;
+  }
+
+  .legaltext1 a {
+    color:#ffffff;
+  }
+  .inlinefacebook {
+   display:inline-block;
+    margin-right:29px;
+    height: 40px;
+    width: 282px;
+    background-color: #4267b2;
+    color: #ffffff;
+    border: none;
+    border-radius:0.25rem;
+    margin-top: -10px;
+}
+.inlinegoogle {
+   display:inline-block;
+    height: 40px;
+    width: 282px;
+    background-color: #ffffff;
+    color: #dc4e41;
+    border: none;
+    border-radius:0.25rem;
+    margin-top: -10px;
+}
+.orText1{
+  color: #ffffff;
+}
+.bannerImage .signup .pannel{
+  margin-top: 30px;
+}
+.sectionone .panel{
+  height: 300px;
+  width:600px;
+  background-color: transparent;
+    border: none;
+    margin-left: 380px;
+    
+}
+ .form-group .form-control{
+    border-width: 1px;
+    border-style: solid;
+    border-color: #007d91;
+     height: 48px;
+    font-size: 14px;
+}
+.form-group1 .btn{
+    background-color:#007d91;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  margin-left: 200px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  height: 40px;
+  background-image: none;
+
+}   
+   .input-icons { 
+      width: 100%; 
+
+  } 
+   .input-icons i { 
+      position: absolute;
+      margin-left: 550px;
+      background:transparent;
+      color:black;
+      border: none;
+      opacity: 30%;
+       margin-top: 5px;
+           font-size: 25;
+  } 
+
+.input-icons:hover{
+  background-color: transparent;
+  border:none;
+}
+
+.form-group2{
+  width:100px;
+  height"46px;
+  margin-left: 15px;
+}
+
+
+/*how talent mania works for companies section*/
+.homepagehighlight{
+  background: #f5f6f7;
+  width:100%;
+  height: 226px;
+  margin-top: 600px;
+}
+.valueProps
+{
+  background-color: #f5f6f7;
+  padding-top: 28px !important;
+  padding-bottom: 28px !important;
+}
+.htmwfyou {
+    padding-top: 12px !important;
+    text-align: center;
+  }
+  .homepagehighlight .mt-std {
+    margin-top: 40px !important;
+}
+     .homepagehighlight .mx-0{
+      margin-left: 110px !important;
+    }
+ .homepagehighlight h3 {
+          font-size: 16px;
+          line-height: 50px;
+    }
+    .homepagehighlight .col-lg-3 {
+      max-width: 18%;
+      text-align: center;
+    }
+    /*--------*/
+
+    /* How talent mania works for jobseekers*/
+     .jobseekersection{
+    background: #f5f6f7;
+    width:100%;
+    height: 226px;
+    margin-top: 0px;
+     }
+     .htmwfjs{
+       padding-top: 65px !important;
+    text-align: center;
+     }
+     .jobseekersection .mt-std {
+    margin-top: 40px !important;
+}
+     .jobseekersection .mx-0{
+      margin-left: 110px !important;
+    }
+ .jobseekersection h3 {
+          font-size: 16px;
+          line-height: 50px;
+    }
+    .jobseekersection .col-lg-3 {
+      max-width: 22%;
+      text-align: center;
+    }
+
+     /*---caraousel -----------------*/
+      .testimonials{
+        margin-top: 100px;
+        background-color: #f5f6f7;
+      }
+      #customers-testimonials{
+      padding: 40px 0;
+      }
+      #customers-testimonials .owl-carousel{
+        display: block;
+      }
+      .testimonial img{
+        margin :0 auto 0 auto;
+        border: 2px solid white;
+        padding: 5px;
+        margin-bottom: 13px; 
+        border-radius: 100px;
+      }
+      .testimonial blockquote{
+        border:0;
+        font-family: tahoma;
+        color:black;
+        padding:5px 150px;
+        position: :relative;
+      }
+      .testimonial blockquote:before,
+      .testimonial blockquote:after{
+        font-size: 80px;
+        font-weight: normal;
+        line-height: 1;
+        width:30px;
+        height:30px;
+        position: absolute;
+      }
+      .testimonial blockquote::before{
+        content: "\201C";
+        top:0;
+        left:100px;
+      }
+      .testimonial blockquote::after{
+        content: "\201D";
+        bottom:0;
+        right:100px;
+      }
+      .testimonial-author p{
+        font-size: 17px;
+        color:000000;
+      }
+      .testimonial-author p strong{
+        display: block;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        text-align: center;
+      }
+/* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */ /* Sit on top */
+    left: 300px;
+    top: 0;
+    width: 60%; /* Full width */
+    height: 600px; /* Full height */ /* Enable scroll if needed */
+     /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+    header .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+      width: 450px;
+    height: 500px; /* Could be more or less, depending on screen size */
+  }
+ 
+   header .modal-title{
+  padding-top: 8px;
+    font-size: 16.5px;
+    text-align: center;
+    font-weight: bold;
+    color: #007d91;
+  }
+  header .legalText{
+  font-size: 12px;
+  margin-left:22px;
+     margin-top: 5px;
+}
+  header .modal-body{
+   position:relative;
+   padding: 1rem;
+   flex: 1 1 auto;    
+  }
+  .signinform{
+    margin-top: 15px;
+  }
+.defaultbutton{
+    height: 40px;
+    width: 375px;
+    background-color: #4267b2;
+    color: #ffffff;
+    border: none;
+    border-width: 1px;
+    border-style: solid;
+    border-radius:0.25rem;
+    margin-top: 10px;
+}
+.google{
+  height: 40px;
+    width: 375px;
+    background-color: #ffffff;
+    color:#dc4e41;
+    border: none;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #000000;
+    border-radius:0.25rem;
+    margin-top: 10px;
+}
+     header .close {
+      font-size: 2rem;
+      float: right;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+    line-height: 8px;
+
+     }
+  #Loginsubmit{
+  background-color: rgb(24, 97, 191);
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  margin-left: 125px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  min-width:150px;
+  height: 40px;
+  background-image: none;
+  cursor: pointer;
+  font-family: lato;
+}
+span.link{
+  cursor: pointer;
+  text-decoration: none;
+  color:#1861bf;
+  margin-left: 140px;
+}
+
+ header .modal-footer .signuplink{
+     margin-right: 80px;
+     margin-top: -12px;
+}
+.d-flex{
+      display: flex !important;
+          line-height: 20px;
+}
+.w-100pct {
+    width: 100%;
+  }
+  .orSeparator .borderTop {
+    border: 1px solid #c4c7cc;
+  }
+  .my-std {
+    margin-top: 16px !important;
+    margin-bottom: 16px !important;
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+
+
+
+
+  /* --------footer -------*/
+  .footer1{
+        background:#007d91;
+         width:100%;
+    height:300px;
+    padding-top: 48px;
+    padding-bottom: 24px;
+  }
+.footer_container{
+  width:100%;
+  height: 250px;
+}
+.menu_3nf-{
+  display: flex;
+     width:100%;
+    margin-bottom: 20px;
+    height: 230px;
+}
+.bigmenu{
+  width:33.33%;
+  height:230px;
+   margin-left: 100px;
+}
+.menu__menuHead_3UEt{
+  width:280px;
+        padding-bottom: 15px;
+       text-align: center;
+       font-weight: bold;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.contentmenu{
+  width:280px;
+  height:190px;
+}
+.abouttext{
+  color:#ffffff;
+  text-align:justify;
+}
+.menulink{
+  color: hsla(0,0%,100%,.8);
+    font-size: 16px;
+   margin-left: 80px;
+   line-height: 2;
+}
+.menulink:hover{
+  color: #ffffff;
+}
+.sociallink svg{
+    margin-left: 30px;
+    margin-top: 15px;
+    width: 30px;
+    height: 30px;
+    padding: 4px;
+    border: 1.5px solid #ffffff;
+}
+.sociallink svg:hover{
+  border:none;
+  background-color: #007d91;
+}
