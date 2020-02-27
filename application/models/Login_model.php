@@ -4,7 +4,8 @@ class Login_model extends CI_Model
 
  function can_login($email, $password)
  {
-
+    echo "ssss";
+    exit;
     $this->db->where('email', $email);
     $query = $this->db->get('jobseeker_user');
     if($query->num_rows() > 0)
