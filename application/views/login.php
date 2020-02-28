@@ -2,7 +2,7 @@
     
 
     <div id="message"></div>
-    <?php echo form_open('login/validation', array('id' => 'loginForm')) ?>
+    <form id="form_login">
         <div class="form-group">
             <label>Enter Email Address</label>
             <input type="text" name="user_email" id="user_email" class="form-control" value="<?php echo set_value('user_email'); ?>" />
@@ -16,7 +16,7 @@
         <div class="form-group">
             <input type="submit" onclick="login()" id="submit" name="login" value="Login" class="btn btn-info" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo base_url(); ?>register">Register</a>
         </div>
-    <?php echo form_close() ?>
+    </form>
     
 
     <script type="text/javascript">
