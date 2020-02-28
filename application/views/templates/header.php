@@ -47,7 +47,7 @@
                         <a class="nav-link" href="#"><i class="fas fa-user"></i></a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-envelope"></i></a>
+                        <a class="nav-link" href="#"> <i class="fas fa-envelope"></i></a>
                       </li>
                   </ul>
                   <form class="form-inline my-2 my-lg-0">

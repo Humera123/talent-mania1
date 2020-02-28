@@ -38,7 +38,7 @@
                           <div class="form-group" style="height: 48px">
                               <!--<label>Enter Password</label>-->
                               <div class="input-icons"> 
-                               <i class="fas fa-lock"></i> 
+                              <i class="fas fa-lock"></i>
                               <input type="password"  name="user_password" class="form-control" placeholder="Password" value="<?php echo set_value('user_password'); ?>" />
                               <span class="text-danger"><?php echo form_error('user_password'); ?></span>
                               </div> 
@@ -52,9 +52,8 @@
                               </select>
                               <span class="text-danger"><?php echo form_error('user_type'); ?></span>
                           </div>
-                          <div class="form-group1" >
-                              <input type="submit" name="register" value="Continue with Email" class="btn btn-info" />
-                          </div>
+                              <input type="submit" name="register" value="Continue with Email"  class="btn"/>
+                          
                       </form>
                </div>
            </div>
@@ -62,6 +61,8 @@
         </div> 
   </div>
 </section>
+<section class="jobseekerandcompany" style="display: block;">
+
 <section class="homepagehighlight" style="display: block;">
   <section class="center py-xl valueProps"> 
      <div>
@@ -69,23 +70,23 @@
         <div class="row mx-0 mt-std mb-sm">
 
         <div class="col-6 col-lg-3 px-xsm mb-lg mb-lg-0">
-          <img src="../images/searchpeople.png">
+          <img src="../talentmania/images/searchpeople.png">
           <h3>Search Candidates</h3>
         </div> 
          <div class="col-6 col-lg-3 px-xsm mb-lg mb-lg-0">
-          <img src="../images/endorse.png">
+          <img src="../talentmania/images/endorse.png">
           <h3>Approach Talent Pool</h3>
         </div> 
         <div class="col-6 col-lg-3 px-xsm mb-lg mb-lg-0">
-          <img src="../images/scruitny.png">
+          <img src="../talentmania/images/scruitny.png">
           <h3>Scruitnize Candidates</h3>
         </div>
         <div class="col-6 col-lg-3 px-xsm mb-lg mb-lg-0">
-          <img src="../images/intelligent.png">
+          <img src="../talentmania/images/intelligent.png">
           <h3>Get Endorsed People</h3>
         </div>
         <div class="col-6 col-lg-3 px-xsm mb-lg mb-lg-0">
-          <img src="../images/acquire.png">
+          <img src="../talentmania/images/acquire.png">
           <h3>Acquire Candidate</h3>
         </div>
         </div>
@@ -99,115 +100,66 @@
        <div class="row mx-0 mt-std mb-sm">
 
         <div class="col-6 col-lg-3 px-xsm mb-lg mb-lg-0">
-          <img src="../images/profiling.png">
+          <img src="../talentmania/images/profiling.png">
           <h3>Profiling</h3>
         </div> 
          <div class="col-6 col-lg-3 px-xsm mb-lg mb-lg-0">
-          <img src="../images/rating.png">
+          <img src="../talentmania/images/rating.png">
           <h3> Skills Rating</h3>
         </div> 
         <div class="col-6 col-lg-3 px-xsm mb-lg mb-lg-0">
-          <img src="../images/hiring.png">
+          <img src="../talentmania/images/hiring.png">
           <h3>Hiring</h3>
         </div>
         <div class="col-6 col-lg-3 px-xsm mb-lg mb-lg-0">
-          <img src="../images/training.png">
+          <img src="../talentmania/images/training.png">
           <h3>Skills Enhancement</h3>
         </div>
         </div>
     </div>
    </section>
 </section>
-  <section id="testimonials">
-    <div id="testimonials-cover">
-      <h3 calss="text-center">What Our Customers Say</h3>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <div id="customers-testimonials" class="text-center owl-carousel owl-theme">
-                <div class="testimonials">
-                  <img src="../images/avatar-1.jpg" class="img-responsive img-circle alt="">
-                  <blockquote class="text-center">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                  </blockquote>
-                  <div class="testimonial-author">
-                    <p>
-                      <strong> Daniel Arthur</strong>
-                      <span> CEO & Founder - Digital Concepts</span>
-                    </p>
-                  </div>
-                </div>
-                 
-
-                 <div class="testimonials">
-                  <img src="../images/avatar-2.jpg" class="img-responsive img-circle alt="">
-                  <blockquote class="text-center">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                  </blockquote>
-                  <div class="testimonial-author">
-                    <p>
-                      <strong> Daniel Arthur</strong>
-                      <span> CEO & Founder - Digital Concepts</span>
-                    </p>
-                  </div>
-                </div>
-
-
-
-
-                <div class="testimonials">
-                  <img src="../images/avatar-3.jpg" class="img-responsive img-circle alt="">
-                  <blockquote class="text-center">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                  </blockquote>
-                  <div class="testimonial-author">
-                    <p>
-                      <strong> Daniel Arthur</strong>
-                      <span> CEO & Founder - Digital Concepts</span>
-                    </p>
-                  </div>
-                </div>
-
-
-              </div>
-            </div>
+</section>
+ 
+<section class="testimonialcarousel">
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-center m-auto">
+      <h2 class="headingcontent">What Our Clients Say</h2>
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+         <!--Carousel indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>   
+        <!--Wrapper for carousel items -->
+        <div class="carousel-inner">
+          <div class="item carousel-item active">
+            <div class="img-box"><img src="../talentmania/images/client1.jpg"></div>
+            <p class="testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Idac bibendum scelerisque non non purus. Suspendisse varius nibh non aliquet.</p>
+            <p class="overview"><b>Paula Wilson</b>, Media Analyst</p>
+          </div>
+          <div class="item carousel-item">
+            <div class="img-box"><img src="../talentmania/images/client2.jpg"></div>
+            <p class="testimonial">Vestibulum quis quam ut magna consequat faucibus. Pellentesque eget nisi a mi suscipit tincidunt. Utmtc tempus dictum risus. Pellentesque viverra sagittis quam at mattis. Suspendisse potenti. Aliquam sit amet gravida nibh, facilisis gravida odio.</p>
+            <p class="overview"><b>Antonio Moreno</b>, Web Developer</p>
+          </div>
+          <div class="item carousel-item">
+            <div class="img-box"><img src="../talentmania/images/client3.jpg" alt=""></div>
+            <p class="testimonial">Phasellus vitae suscipit justo. Mauris pharetra feugiat ante id lacinia. Etiam faucibus mauris id tempor egestas. Duis luctus turpis at accumsan tincidunt. Phasellus risus risus, volutpat vel tellus ac, tincidunt fringilla massa. Etiam hendrerit dolor eget rutrum.</p>
+            <p class="overview"><b>Michael Holz</b>, Seo Analyst</p>
           </div>
         </div>
-
+        <!-- Carousel controls -->
+        <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
+          <i class="fa fa-angle-left"></i>
+        </a>
+        <a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
+          <i class="fa fa-angle-right"></i>
+        </a>
+      </div>
     </div>
-  </section>
-
-<script>
-  $(function(){
-    $("#customers-testimonials").owlCarousel({
-      items:1;
-      autoplay:true;
-      smartSpeed:700;
-      look:true;
-      autoplayHoverPause:true;
-    });
-  });
-</script>
- 
-
+  </div>
+</div>                                                           
+</section>
