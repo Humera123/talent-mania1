@@ -179,6 +179,11 @@ border: 2px solid #007d91;
   border: 2px solid #007d91; 
      
 }
+@media only screen and (min-width: 601px) {
+  div.panel {
+    font-size: 14px;
+  }
+}
 .bannerImage{
 background-image:url("../images/recruitment.jpg");
 width: 100%;
@@ -200,7 +205,7 @@ position: absolute;
   font-size: 30px;
  padding-top: 20px;
  margin-bottom: 20px;
- margin-left: 20%;
+ margin-left: 10%;
 }
 .legaltext1{
     font-size: 14px;
@@ -254,8 +259,8 @@ position: absolute;
      height: 48px;
     font-size: 14px;
 }
-}
-.form-group1 .btn{
+
+ .panelbody .btn{
     background-color:#007d91;
   border: none;
   color: white;
@@ -281,12 +286,12 @@ position: absolute;
       border: none;
       opacity: 30%;
        margin-top: 5px;
-           font-size: 25;
+      font-size: 22;
   } 
-
-.input-icons:hover{
-  background-color: transparent;
-  border:none;
+.input-icons i:hover{
+  background: transparent;
+    border: none;
+    color: black;
 }
 
 .form-group2{
@@ -297,11 +302,17 @@ position: absolute;
 
 
 /*how talent mania works for companies section*/
-.homepagehighlight{
-  background: #f5f6f7;
+.jobseekerandcompany{
+   background: #f5f6f7;
   width:100%;
-  height: 226px;
-  margin-top: 600px;
+  height: 101%;
+  margin-top: 546px;
+}
+.homepagehighlight{
+  background:#f5f6f7 ;
+  width:100%;
+  height: 50.5%;
+  margin-top:0px;
 }
 .valueProps
 {
@@ -312,16 +323,15 @@ position: absolute;
 .htmwfyou {
     padding-top: 12px !important;
     text-align: center;
+        margin-bottom: 60px;
   }
-  .homepagehighlight .mt-std {
-    margin-top: 40px !important;
-}
-     .homepagehighlight .mx-0{
+      .homepagehighlight .mx-0{
       margin-left: 110px !important;
     }
  .homepagehighlight h3 {
           font-size: 16px;
           line-height: 50px;
+         text-align: center;
     }
     .homepagehighlight .col-lg-3 {
       max-width: 18%;
@@ -331,17 +341,17 @@ position: absolute;
 
     /* How talent mania works for jobseekers*/
      .jobseekersection{
-    background: #f5f6f7;
+    background:#f5f6f7;
     width:100%;
-    height: 226px;
+    height: 50.5%;
     margin-top: 0px;
      }
      .htmwfjs{
-       padding-top: 65px !important;
+       padding-top:0px !important;
     text-align: center;
      }
      .jobseekersection .mt-std {
-    margin-top: 40px !important;
+    margin-top: 75px !important;
 }
      .jobseekersection .mx-0{
       margin-left: 110px !important;
@@ -406,11 +416,7 @@ position: absolute;
       .testimonial-author p strong{
         display: block;
       }
-
-      h3 {
-        text-transform: uppercase;
-        text-align: center;
-      }
+      
 /* The Modal (background) */
   .modal {
     display: none; /* Hidden by default */

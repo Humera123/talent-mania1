@@ -38,7 +38,7 @@
                           <div class="form-group" style="height: 48px">
                               <!--<label>Enter Password</label>-->
                               <div class="input-icons"> 
-                               <i class="fas fa-lock"></i> 
+                              <i class="fas fa-lock"></i>
                               <input type="password"  name="user_password" class="form-control" placeholder="Password" value="<?php echo set_value('user_password'); ?>" />
                               <span class="text-danger"><?php echo form_error('user_password'); ?></span>
                               </div> 
@@ -52,9 +52,8 @@
                               </select>
                               <span class="text-danger"><?php echo form_error('user_type'); ?></span>
                           </div>
-                          <div class="form-group1" >
-                              <input type="submit" name="register" value="Continue with Email" class="btn btn-info" />
-                          </div>
+                              <input type="submit" name="register" value="Continue with Email"  class="btn"/>
+                          
                       </form>
                </div>
            </div>
@@ -62,6 +61,8 @@
         </div> 
   </div>
 </section>
+<section class="jobseekerandcompany" style="display: block;">
+
 <section class="homepagehighlight" style="display: block;">
   <section class="center py-xl valueProps"> 
      <div>
@@ -69,23 +70,23 @@
         <div class="row mx-0 mt-std mb-sm">
 
         <div class="col-6 col-lg-3 px-xsm mb-lg mb-lg-0">
-          <img src="../images/searchpeople.png">
+          <img src="../talentmania/images/searchpeople.png">
           <h3>Search Candidates</h3>
         </div> 
          <div class="col-6 col-lg-3 px-xsm mb-lg mb-lg-0">
-          <img src="../images/endorse.png">
+          <img src="../talentmania/images/endorse.png">
           <h3>Approach Talent Pool</h3>
         </div> 
         <div class="col-6 col-lg-3 px-xsm mb-lg mb-lg-0">
-          <img src="../images/scruitny.png">
+          <img src="../talentmania/images/scruitny.png">
           <h3>Scruitnize Candidates</h3>
         </div>
         <div class="col-6 col-lg-3 px-xsm mb-lg mb-lg-0">
-          <img src="../images/intelligent.png">
+          <img src="../talentmania/images/intelligent.png">
           <h3>Get Endorsed People</h3>
         </div>
         <div class="col-6 col-lg-3 px-xsm mb-lg mb-lg-0">
-          <img src="../images/acquire.png">
+          <img src="../talentmania/images/acquire.png">
           <h3>Acquire Candidate</h3>
         </div>
         </div>
@@ -99,25 +100,27 @@
        <div class="row mx-0 mt-std mb-sm">
 
         <div class="col-6 col-lg-3 px-xsm mb-lg mb-lg-0">
-          <img src="../images/profiling.png">
+          <img src="../talentmania/images/profiling.png">
           <h3>Profiling</h3>
         </div> 
          <div class="col-6 col-lg-3 px-xsm mb-lg mb-lg-0">
-          <img src="../images/rating.png">
+          <img src="../talentmania/images/rating.png">
           <h3> Skills Rating</h3>
         </div> 
         <div class="col-6 col-lg-3 px-xsm mb-lg mb-lg-0">
-          <img src="../images/hiring.png">
+          <img src="../talentmania/images/hiring.png">
           <h3>Hiring</h3>
         </div>
         <div class="col-6 col-lg-3 px-xsm mb-lg mb-lg-0">
-          <img src="../images/training.png">
+          <img src="../talentmania/images/training.png">
           <h3>Skills Enhancement</h3>
         </div>
         </div>
     </div>
    </section>
 </section>
+</section>
+
   <section id="testimonials">
     <div id="testimonials-cover">
       <h3 calss="text-center">What Our Customers Say</h3>
@@ -209,5 +212,4 @@
     });
   });
 </script>
- 
 
