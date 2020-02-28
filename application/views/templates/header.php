@@ -91,7 +91,7 @@
                          </div>
                       <div id="message"></div>
                       <div class="signinform">
-                      <?php echo form_open('login/validation', array('id' => 'loginForm')) ?>
+                      <form id="loginuser">
                                 <div class="form-group">     
                                    <input type="text" id="user_email" placeholder="Email Address" name="user_email" class="form-control" value="<?php echo set_value('user_email'); ?>" />
                                    <span class="text-danger"><?php echo form_error('user_email'); ?></span> 
@@ -116,7 +116,7 @@
                                    Dont have an account?<a href="<?php echo base_url(); ?>home">Sign Up</a>
                                   </div>
                             </div>
-                                      <?php echo form_close() ?>
+</form>
                     </div>
             </div>
         </div>
