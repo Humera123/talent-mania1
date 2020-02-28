@@ -366,85 +366,111 @@ position: absolute;
     }
 
      /*---caraousel -----------------*/
-     body {
-  font-family: "Open Sans", sans-serif;
+font-family: "Open Sans", sans-serif;
 }
-
-.testimonials {
-  overflow: hidden;
+.testimonialcarousel{
+  width:100%;
+  height:70%;
+  display: block;
+}
+.testimonialcarousel .headingcontent {
+  color: #000000;
+  text-align: center;
+  text-transform: capitalize;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
   position: relative;
-  max-height: 300px;
+  margin-top: 70px;
 }
-
-.testimonials {
-  background: #161d25;
-}
-
-.one-slide,
-.testimonial,
-.message {
-  border: none !important;
-  outline: none !important;
-}
-
-.icon-overlay {
+.headingcontent::after {
+  content: "";
+  width: 45%;
   position: absolute;
-  opacity: 0.3;
-  right: 10%;
-  top: 0;
-  height: auto;
-  width: 100%;
-  max-width: 400px;
+  margin: 0 auto;
+  height: 3px;
+  background: #007d91;
+  left: 0;
+  right: 0;
+  bottom: -10px;
 }
-
-.carousel-controls .control {
-  position: absolute;
-  transform: translateY(-50%);
-  width: 45px;
-  height: 45px;
+.col-center {
+  margin: 0 auto;
+  float: none !important;
+}
+.carousel {
+  margin: 50px auto;
+  padding: 0 70px;
+}
+.carousel .item {
+  color: #999;
+  font-size: 14px;
+    text-align: center;
+  overflow: hidden;
+    min-height: 290px;
+}
+.carousel .item .img-box {
+  width: 135px;
+  height: 135px;
+  margin: 0 auto;
+  padding: 5px;
+  border: 1px solid #ddd;
   border-radius: 50%;
-  border: 2px solid #fff;
-  z-index: 1;
+}
+.carousel .img-box img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 50%;
+}
+.carousel .testimonial {
+  padding: 30px 0 10px;
+}
+.carousel .overview { 
+  font-style: italic;
+}
+.carousel .overview b {
+  text-transform: uppercase;
+  color: #007d91;
+}
+.carousel .carousel-control {
+  width: 40px;
+    height: 40px;
+    margin-top: -20px;
+    top: 50%;
+  background: none;
+}
+.carousel-control i {
+    font-size: 68px;
+  line-height: 42px;
+    position: absolute;
+    display: inline-block;
+  color: rgba(0, 0, 0, 0.8);
+  background-color: transparent;
+  border:none;
+  text-shadow: 0 3px 3px #e6e6e6, 0 0 0 #000;
+}
+.carousel-control i:hover{
+  background-color: transparent;
+}
+.carousel .carousel-indicators {
+  bottom: -40px;
+  color:gray;
+}
+.carousel-indicators li, .carousel-indicators li.active {
+  width: 10px;
+  height: 10px;
+  margin: 1px 3px;
+  border-radius: 50%;
+}
+.carousel-indicators li { 
+  background: #999;
+  border-color: transparent;
+  box-shadow: inset 0 2px 1px rgba(0,0,0,0.2);
+}
+.carousel-indicators li.active {  
+  background: #ffffff;   
 }
 
-.prev {
-  left: -2.25rem;
-}
-
-.next {
-  right: -2.25rem;
-}
-
-@media screen and (max-width: 768px) {
-  .testimonials {
-    max-height: 700px;
-  }
-  .icon-overlay {
-    height: 300px;
-    top: calc(50% - 150px);
-  }
-  .carousel-controls .control {
-    width: 25px;
-    height: 25px;
-    top: inherit;
-  }
-  .prev {
-    left: 0;
-  }
-  .next {
-    right: 0;
-  }
-  .control i {
-    font-size: .7rem;
-  }
-  .testimonials .message {
-    font-size: 1rem;
-  }
-  .testimonials h2 {
-    font-size: 1.5rem;
-  }
-}
-      
 /* The Modal (background) */
   .modal {
     display: none; /* Hidden by default */

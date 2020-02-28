@@ -120,55 +120,46 @@
    </section>
 </section>
 </section>
-
-
-<section class="testimonials py-5 text-white px-1 px-md-5 margin-top-xl">
-  <img src="https://raw.githubusercontent.com/solodev/testimonial-slider-fullwidth/master/solodev-logo-stacked.png" class="icon-overlay" />
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <h2 class="pt-2 text-center font-weight-bold">Our Customers Are Seeing Big Results</h2>
-
-        <div class="carousel-controls testimonial-carousel-controls">
-          <div class="control d-flex align-items-center justify-content-center prev mt-3"><i class="fa fa-chevron-left"></i></div>
-          <div class="control d-flex align-items-center justify-content-center next mt-3"><i class="fa fa-chevron-right"></i></div>
-
-          <div class="testimonial-carousel">
-            <div class="h5 font-weight-normal one-slide mx-auto">
-              <div class="testimonial w-100 px-3 text-center d-flex flex-direction-column justify-content-center flex-wrap align-items-center">
-                <div class="message text-center blockquote w-100">"They’ve been consistent throughout the years and grown together with us. Even as they’ve grown, they haven’t lost sight of what they do. Most of their key resources are still with them, which is also a testament to their organization."</div>
-                <div class="blockquote-footer w-100 text-white">Ted, WebCorpCo</div>
-              </div>
-            </div>
-            <div class="h5 font-weight-normal one-slide mx-auto">
-              <div class="testimonial w-100 px-3 text-center  d-flex flex-direction-column justify-content-center flex-wrap align-items-center">
-                <div class="message text-center blockquote w-100">"Our website uses Solodev to craft a website capable of representing its diverse residents. The website features a newsroom with the latest events, an interactive calendar, and a mobile app that puts the resources at a user’s fingertips."</div>
-                <div class="blockquote-footer w-100 text-white">Jim Joe, WebCorpCo</div>
-              </div>
-            </div>
-            <div class="h5 font-weight-normal one-slide mx-auto">
-              <div class="testimonial w-100 px-3 text-center  d-flex flex-direction-column justify-content-center flex-wrap align-items-center">
-                <div class="message text-center blockquote w-100">Solodev is a great company to partner with! We are extremely happy with the software, service, and support.</div>
-                <div class="blockquote-footer w-100 text-white">Jim Joe, WebCorpCo</div>
-              </div>
-            </div>
+ 
+<section class="testimonialcarousel">
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-center m-auto">
+      <h2 class="headingcontent">What Our Clients Say</h2>
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+         <!--Carousel indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>   
+        <!--Wrapper for carousel items -->
+        <div class="carousel-inner">
+          <div class="item carousel-item active">
+            <div class="img-box"><img src="../talentmania/images/client1.jpg"></div>
+            <p class="testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Idac bibendum scelerisque non non purus. Suspendisse varius nibh non aliquet.</p>
+            <p class="overview"><b>Paula Wilson</b>, Media Analyst</p>
+          </div>
+          <div class="item carousel-item">
+            <div class="img-box"><img src="../talentmania/images/client2.jpg"></div>
+            <p class="testimonial">Vestibulum quis quam ut magna consequat faucibus. Pellentesque eget nisi a mi suscipit tincidunt. Utmtc tempus dictum risus. Pellentesque viverra sagittis quam at mattis. Suspendisse potenti. Aliquam sit amet gravida nibh, facilisis gravida odio.</p>
+            <p class="overview"><b>Antonio Moreno</b>, Web Developer</p>
+          </div>
+          <div class="item carousel-item">
+            <div class="img-box"><img src="../talentmania/images/client3.jpg" alt=""></div>
+            <p class="testimonial">Phasellus vitae suscipit justo. Mauris pharetra feugiat ante id lacinia. Etiam faucibus mauris id tempor egestas. Duis luctus turpis at accumsan tincidunt. Phasellus risus risus, volutpat vel tellus ac, tincidunt fringilla massa. Etiam hendrerit dolor eget rutrum.</p>
+            <p class="overview"><b>Michael Holz</b>, Seo Analyst</p>
           </div>
         </div>
+        <!-- Carousel controls -->
+        <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
+          <i class="fa fa-angle-left"></i>
+        </a>
+        <a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
+          <i class="fa fa-angle-right"></i>
+        </a>
       </div>
     </div>
   </div>
+</div>                                                           
 </section>
-<script >
-$(document).ready(function() {
-  $(".testimonial-carousel").slick({
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: false,
-    arrows: true,
-    prevArrow: $(".testimonial-carousel-controls .prev"),
-    nextArrow: $(".testimonial-carousel-controls .next")
-  });
-});
-</script>
-  
