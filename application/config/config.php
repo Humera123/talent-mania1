@@ -23,12 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-<<<<<<< HEAD
 $config['base_url'] = 'http://localhost/talentmania/';
-=======
-$config['base_url'] = 'http://localhost/talent-mania1/';
->>>>>>> 5af698c4a53a535616b9e4df2c55f82b1aca2ce3
-
 /*
 |--------------------------------------------------------------------------
 | Index File

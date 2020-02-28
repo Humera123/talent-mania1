@@ -78,11 +78,7 @@ $db['default'] = array(
 	'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => '',
-<<<<<<< HEAD
 	'database' => 'talentmaniadb',
-=======
-	'database' => 'digit684_talentmania',
->>>>>>> 5af698c4a53a535616b9e4df2c55f82b1aca2ce3
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

@@ -366,56 +366,84 @@ position: absolute;
     }
 
      /*---caraousel -----------------*/
-      .testimonials{
-        margin-top: 100px;
-        background-color: #f5f6f7;
-      }
-      #customers-testimonials{
-      padding: 40px 0;
-      }
-      #customers-testimonials .owl-carousel{
-        display: block;
-      }
-      .testimonial img{
-        margin :0 auto 0 auto;
-        border: 2px solid white;
-        padding: 5px;
-        margin-bottom: 13px; 
-        border-radius: 100px;
-      }
-      .testimonial blockquote{
-        border:0;
-        font-family: tahoma;
-        color:black;
-        padding:5px 150px;
-        position: :relative;
-      }
-      .testimonial blockquote:before,
-      .testimonial blockquote:after{
-        font-size: 80px;
-        font-weight: normal;
-        line-height: 1;
-        width:30px;
-        height:30px;
-        position: absolute;
-      }
-      .testimonial blockquote::before{
-        content: "\201C";
-        top:0;
-        left:100px;
-      }
-      .testimonial blockquote::after{
-        content: "\201D";
-        bottom:0;
-        right:100px;
-      }
-      .testimonial-author p{
-        font-size: 17px;
-        color:000000;
-      }
-      .testimonial-author p strong{
-        display: block;
-      }
+     body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.testimonials {
+  overflow: hidden;
+  position: relative;
+  max-height: 300px;
+}
+
+.testimonials {
+  background: #161d25;
+}
+
+.one-slide,
+.testimonial,
+.message {
+  border: none !important;
+  outline: none !important;
+}
+
+.icon-overlay {
+  position: absolute;
+  opacity: 0.3;
+  right: 10%;
+  top: 0;
+  height: auto;
+  width: 100%;
+  max-width: 400px;
+}
+
+.carousel-controls .control {
+  position: absolute;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  z-index: 1;
+}
+
+.prev {
+  left: -2.25rem;
+}
+
+.next {
+  right: -2.25rem;
+}
+
+@media screen and (max-width: 768px) {
+  .testimonials {
+    max-height: 700px;
+  }
+  .icon-overlay {
+    height: 300px;
+    top: calc(50% - 150px);
+  }
+  .carousel-controls .control {
+    width: 25px;
+    height: 25px;
+    top: inherit;
+  }
+  .prev {
+    left: 0;
+  }
+  .next {
+    right: 0;
+  }
+  .control i {
+    font-size: .7rem;
+  }
+  .testimonials .message {
+    font-size: 1rem;
+  }
+  .testimonials h2 {
+    font-size: 1.5rem;
+  }
+}
       
 /* The Modal (background) */
   .modal {
