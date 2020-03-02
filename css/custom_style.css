@@ -654,23 +654,16 @@ span.link{
    border: 1.5px solid #ffffff;
 }
 
-@media(min-width: 1200px){
+*@media(min-width: 1200px){
 
 }
 
 @media(max-width: 990px){
-  .navbar  .navbar-brand{
+  .bannerImage{
     width: 100%;
   }
-  .collapse{
-    
-    width:100%;
-    text-align:center;
+ 
   }
-.collapse ul {
-  opacity:0;
-  visibility: hidden;
-}
 
 }
 @media(max-width: 800px)
