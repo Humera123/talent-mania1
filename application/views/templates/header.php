@@ -26,7 +26,7 @@
            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
           <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
           </script>
-
+           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           </head>
 
   <body>
@@ -91,10 +91,7 @@
                          </div>
                       <div id="message"></div>
                       <div class="signinform">
- 
-                      <form id="loginForm">
-                      
- 
+                      <form id="loginuser"/>
                                 <div class="form-group">     
                                    <input type="text" id="user_email" placeholder="Email Address" name="user_email" class="form-control" value="<?php echo set_value('user_email'); ?>" />
                                    <span class="text-danger"><?php echo form_error('user_email'); ?></span> 
@@ -106,7 +103,7 @@
                                   <span class="text-danger"><?php echo form_error('user_password'); ?>
                                   </span>
                                 </div>
-                              <input onclick="loginUser()" type="submit" id="Loginsubmit" name="login" value="Sign In"/>
+                              <input  type="submit" id="Loginsubmit" name="login" value="Sign In"/>
                               <div class="mt-xsm">
                                 <span class="link">Forgot Password</span>
                               </div>
@@ -119,9 +116,7 @@
                                    Dont have an account?<a href="<?php echo base_url(); ?>home">Sign Up</a>
                                   </div>
                             </div>
-
                                       </form>
-
                     </div>
             </div>
         </div>
@@ -138,8 +133,8 @@
                         btn.onclick = function() {
                         modal.style.display = "block";}
 
-                              function loginUser()
-                              {
+                              $( "#loginuser" ).submit(function( event ) {
+                                 event.preventDefault();
                                   console.log("login");
                                   email  = $("#user_email").val();
                                   password  = $("#user_password").val();

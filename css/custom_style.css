@@ -131,6 +131,7 @@ font-size: 28px;
 font-weight:bold;
 font-family:arial;
 margin-left: 40px;
+width: 20%;
 }
 .navbar .collapse .navlink{
 height:22px;
@@ -651,4 +652,38 @@ span.link{
 .sociallink svg:hover{
   background-color: #007d91;
    border: 1.5px solid #ffffff;
+}
+
+@media(min-width: 1200px){
+
+}
+
+@media(max-width: 990px){
+  .navbar  .navbar-brand{
+    width: 100%;
+  }
+  .collapse{
+    
+    width:100%;
+    text-align:center;
+  }
+.collapse ul {
+  opacity:0;
+  visibility: hidden;
+}
+
+}
+@media(max-width: 800px)
+{
+
+}
+@media(max-width: 600px)
+{
+ .footer1{
+  width: 100%;
+ } 
+}
+@media(max-width: 480px)
+{
+  
 }
