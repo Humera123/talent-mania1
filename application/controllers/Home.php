@@ -39,7 +39,8 @@ class Home extends CI_Controller {
     'verification_key' => $verification_key
    );
    $id = $this->home_model->insert($data);
-   if($id > 0)
+   $url = current_url();
+   if($id > 0 && (strpos($url,'localhost') == false))
    {
     $subject = "Please verify email for login";
     $message = "
