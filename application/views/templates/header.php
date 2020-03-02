@@ -24,13 +24,11 @@
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
           <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
-          </script>
-        
-        
+          </script>        
         <script type = 'text/javascript' src = "<?php echo base_url(); ?>js/autocomplete/jquery.easy-autocomplete.min.js"></script>
         <script type = 'text/javascript' src = "<?php echo base_url(); ?>js/system.js"></script>
-        
-        </head>
+           <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          </head>
 
   <body>
     <header>
@@ -94,7 +92,9 @@
                          </div>
                       <div id="message"></div>
                       <div class="signinform">
+
                       <?php echo form_open('login/validation', array('id' => 'loginForm')) ?>
+
                                 <div class="form-group">     
                                    <input type="text" id="user_email" placeholder="Email Address" name="user_email" class="form-control" value="<?php echo set_value('user_email'); ?>" />
                                    <span class="text-danger"><?php echo form_error('user_email'); ?></span> 
@@ -119,7 +119,9 @@
                                    Dont have an account?<a href="<?php echo base_url(); ?>home">Sign Up</a>
                                   </div>
                             </div>
+
              <?php echo form_close() ?>
+
                     </div>
             </div>
         </div>
