@@ -1,11 +1,10 @@
-
-  <section class="sectionone">
+<section class="sectionone">
   <div class="bannerImage">
-        <div class="signup   align-items-center justify-content-center">
-              <h1 class="tagline"> Find The Job That Fits Your Life</h1>
+      <div class="signup   align-items-center justify-content-center">
+          <h1 class="tagline"> Find The Job That Fits Your Life</h1>
              <!--  Registration F0orm -->
-           <div class="panel">
-               <div class="panelbody">
+          <div class="panel">
+              <div class="panelbody">
                 <p class="legaltext1">
                   By continuing, you agree to our <a href="#" target="_blank" rel=" " class="link">Terms of Use</a> and <a href="#" target="_blank" rel="" class="link">Privacy Policy</a>.</p>
                                   <div>
@@ -70,23 +69,23 @@
         <div class="row mx-0 mt-std mb-sm">
 
         <div class="col-6 col-lg-3 px-xsm mb-lg mb-lg-0">
-          <img src="../talentmania/images/searchpeople.png">
+          <img src="<?php echo base_url(); ?>/images/searchpeople.png">
           <h3>Search Candidates</h3>
         </div> 
          <div class="col-6 col-lg-3 px-xsm mb-lg mb-lg-0">
-          <img src="../talentmania/images/endorse.png">
+          <img src="<?php echo base_url(); ?>/images/endorse.png">
           <h3>Approach Talent Pool</h3>
         </div> 
         <div class="col-6 col-lg-3 px-xsm mb-lg mb-lg-0">
-          <img src="../talentmania/images/scruitny.png">
+          <img src="<?php echo base_url(); ?>/images/scruitny.png">
           <h3>Scruitnize Candidates</h3>
         </div>
         <div class="col-6 col-lg-3 px-xsm mb-lg mb-lg-0">
-          <img src="../talentmania/images/intelligent.png">
+          <img src="<?php echo base_url(); ?>/images/intelligent.png">
           <h3>Get Endorsed People</h3>
         </div>
         <div class="col-6 col-lg-3 px-xsm mb-lg mb-lg-0">
-          <img src="../talentmania/images/acquire.png">
+          <img src="<?php echo base_url(); ?>/images/acquire.png">
           <h3>Acquire Candidate</h3>
         </div>
         </div>
@@ -100,19 +99,19 @@
        <div class="row mx-0 mt-std mb-sm">
 
         <div class="col-6 col-lg-3 px-xsm mb-lg mb-lg-0">
-          <img src="../talentmania/images/profiling.png">
+          <img src="<?php echo base_url(); ?>/images/profiling.png">
           <h3>Profiling</h3>
         </div> 
          <div class="col-6 col-lg-3 px-xsm mb-lg mb-lg-0">
-          <img src="../talentmania/images/rating.png">
+          <img src="<?php echo base_url(); ?>/images/rating.png">
           <h3> Skills Rating</h3>
         </div> 
         <div class="col-6 col-lg-3 px-xsm mb-lg mb-lg-0">
-          <img src="../talentmania/images/hiring.png">
+          <img src="<?php echo base_url(); ?>/images/hiring.png">
           <h3>Hiring</h3>
         </div>
         <div class="col-6 col-lg-3 px-xsm mb-lg mb-lg-0">
-          <img src="../talentmania/images/training.png">
+          <img src="<?php echo base_url(); ?>/images/training.png">
           <h3>Skills Enhancement</h3>
         </div>
         </div>
@@ -136,17 +135,17 @@
         <!--Wrapper for carousel items -->
         <div class="carousel-inner">
           <div class="item carousel-item active">
-            <div class="img-box"><img src="../talentmania/images/client1.jpg"></div>
+            <div class="img-box"><img src="<?php echo base_url(); ?>/images/client1.jpg"></div>
             <p class="testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Idac bibendum scelerisque non non purus. Suspendisse varius nibh non aliquet.</p>
             <p class="overview"><b>Paula Wilson</b>, Media Analyst</p>
           </div>
           <div class="item carousel-item">
-            <div class="img-box"><img src="../talentmania/images/client2.jpg"></div>
+            <div class="img-box"><img src="<?php echo base_url(); ?>/images/client2.jpg"></div>
             <p class="testimonial">Vestibulum quis quam ut magna consequat faucibus. Pellentesque eget nisi a mi suscipit tincidunt. Utmtc tempus dictum risus. Pellentesque viverra sagittis quam at mattis. Suspendisse potenti. Aliquam sit amet gravida nibh, facilisis gravida odio.</p>
             <p class="overview"><b>Antonio Moreno</b>, Web Developer</p>
           </div>
           <div class="item carousel-item">
-            <div class="img-box"><img src="../talentmania/images/client3.jpg" alt=""></div>
+            <div class="img-box"><img src="<?php echo base_url(); ?>/images/client3.jpg" alt=""></div>
             <p class="testimonial">Phasellus vitae suscipit justo. Mauris pharetra feugiat ante id lacinia. Etiam faucibus mauris id tempor egestas. Duis luctus turpis at accumsan tincidunt. Phasellus risus risus, volutpat vel tellus ac, tincidunt fringilla massa. Etiam hendrerit dolor eget rutrum.</p>
             <p class="overview"><b>Michael Holz</b>, Seo Analyst</p>
           </div>

@@ -4,7 +4,7 @@
          <meta charset="utf-8">
    
        
-        
+        <script type = 'text/javascript' src = "<?php echo base_url(); ?>js/bootstrap.min.js"></script>
         <link rel = "stylesheet" type = "text/css" href = "<?php echo base_url(); ?>css/bootstrap.min.css">        
 
         <link rel = "stylesheet" type = "text/css" href = "<?php echo base_url(); ?>css/custom_style.css">
@@ -14,7 +14,8 @@
        <!-- Optional theme -->
        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384- 
        rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> 
-        
+        <script type = 'text/javascript' src = "<?php echo base_url(); ?>js/autocomplete/jquery.easy-autocomplete.min.js"></script>
+        <script type = 'text/javascript' src = "<?php echo base_url(); ?>js/system.js"></script>
         <!-- Latest compiled and minified JavaScript -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <script src="https://kit.fontawesome.com/1c7cfa9683.js" crossorigin="anonymous"></script>
@@ -24,20 +25,18 @@
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
           <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
-          </script>        
-        <script type = 'text/javascript' src = "<?php echo base_url(); ?>js/autocomplete/jquery.easy-autocomplete.min.js"></script>
-        <script type = 'text/javascript' src = "<?php echo base_url(); ?>js/system.js"></script>
-           <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          </script>
+
           </head>
 
   <body>
     <header>
       <div class="container">
-          <nav class="navbar navbar-expand-sm navbar-transparent">
+          <nav class="navbar navbar-expand-lg navbar-transparent">
             <a class="navbar-brand" href="#">TALENT MANIA</a>
-            <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-              </button>-->
+              </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav ml-auto">
@@ -92,9 +91,7 @@
                          </div>
                       <div id="message"></div>
                       <div class="signinform">
-
-                      <?php echo form_open('login/validation', array('id' => 'loginForm')) ?>
-
+                      <form id="loginuser">
                                 <div class="form-group">     
                                    <input type="text" id="user_email" placeholder="Email Address" name="user_email" class="form-control" value="<?php echo set_value('user_email'); ?>" />
                                    <span class="text-danger"><?php echo form_error('user_email'); ?></span> 
@@ -106,7 +103,7 @@
                                   <span class="text-danger"><?php echo form_error('user_password'); ?>
                                   </span>
                                 </div>
-                              <input  type="submit" id="Loginsubmit" name="login" value="Sign In"/>
+                              <input onclick="loginUser()" type="submit" id="Loginsubmit" name="login" value="Sign In"/>
                               <div class="mt-xsm">
                                 <span class="link">Forgot Password</span>
                               </div>
@@ -119,9 +116,7 @@
                                    Dont have an account?<a href="<?php echo base_url(); ?>home">Sign Up</a>
                                   </div>
                             </div>
-
-             <?php echo form_close() ?>
-
+</form>
                     </div>
             </div>
         </div>
@@ -137,6 +132,40 @@
                         // When the user clicks on the button, open the modal 
                         btn.onclick = function() {
                         modal.style.display = "block";}
+
+                              function loginUser()
+                              {
+                                  console.log("login");
+                                  email  = $("#user_email").val();
+                                  password  = $("#user_password").val();
+                                  $.ajax({
+                                      url: '<?php echo base_url()?>'  + 'login/validation',
+                                      type:  "POST",        
+                                      dataType: "json",
+                                      data: { email: email,password: password},
+                                      success: function(data) 
+                                      {
+                                          console.log("success");
+                                          console.log(data);
+                                          if ( !data.error)
+                                          {
+                                              console.log("success");
+                                              $("#message").text(data.message);
+                                              location.reload();
+                                          }
+                                          else
+                                          {
+                                                   $("#message").text(data.message);
+                                          }
+                                      },
+                                      error: function (jqXHR, textStatus, errorThrown)
+                                      {
+                                          console.warn(jqXHR.responseText);
+                                      }
+
+                                  });
+                              }
+                                
                         </script>
             </div> 
           </nav>
