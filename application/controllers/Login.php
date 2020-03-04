@@ -12,7 +12,7 @@ class Login extends CI_Controller {
    redirect('index');
   }
   $this->load->library('form_validation');
-  $this->load->library('encrypt');
+  $this->load->library('encryption');
   $this->load->model('login_model');
   $this->load->helper('form');
   

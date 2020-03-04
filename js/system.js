@@ -1,6 +1,7 @@
 //login form submit 
 $(function() {
         $("#loginForm").on('submit', function(e) {
+          
             e.preventDefault();
 
             var loginForm = $(this);

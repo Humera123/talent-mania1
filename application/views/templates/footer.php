@@ -1,7 +1,6 @@
-        </div>
 
     </body>
-    <footer class="footer1">
+    <footer class="footer">
       <div class="footer_container">
       	<div class=" menu_3nF- footermenu">
       		<div class="bigmenu">
