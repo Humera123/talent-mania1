@@ -39,6 +39,46 @@ class Encryptioncustom {
         $decrypttext = mcrypt_decrypt(MCRYPT_RIJNDAEL_256, $this->key, $crypttext, MCRYPT_MODE_ECB, $iv);
         return trim($decrypttext);
     }
+
+    
+	private $rotations = 0 ;
+
+	public function encrypt_password($password, $username){
+
+		$salt = hash('sha256', uniqid(mt_rand(), true) . "somesalt" . strtolower($username));
+
+		$hash = $salt . $password;
+
+
+		for ( $i = 0; $i < $this->rotations; $i ++ ) {
+		  $hash = hash('sha256', $hash);
+		}
+
+
+		return $salt . $hash;
+	}
+
+
+	public function is_valid_password($password,$dbpassword){
+        
+		$salt = substr($dbpassword, 0, 64);
+
+		$hash = $salt . $password;
+        
+		for ( $i = 0; $i < $this->rotations; $i ++ ) {
+             $hash = hash('sha256', $hash);
+                
+		}
+        
+             print_r($hash);
+		//Sleep a bit to prevent brute force
+		time_nanosleep(0, 400000000);
+		$hash = $salt . $hash;
+        
+		return $hash;
+
+
+	}
 }
 
 ?>

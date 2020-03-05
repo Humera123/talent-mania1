@@ -1,36 +1,29 @@
-//login form submit 
+//login form submit
 $(function() {
-        $("#loginForm").on('submit', function(e) {
-            e.preventDefault();
+  $("#loginForm").on('submit', function(e) {
+      e.preventDefault();
 
-            var loginForm = $(this);
+      var loginForm = $(this);
 
-            $.ajax({
-                url: loginForm.attr('action'),
-                type: 'post',
-                data: loginForm.serialize(),
-
-                success: function(data) {
-                     console.log("success");
-                      console.log(data);
-                      if ( !data.error)
-                          {
-                            console.log("success");
-                            $("#message").text(data.message);
-                            location.reload();
-                          }
-                      else
-                          {
-                            $("#message").text(data.message);
-                          }
-                      },
-                error: function (jqXHR, textStatus, errorThrown)
-                    {
-                      console.warn(jqXHR.responseText);
-                    }
-            });
-        });
+      $.ajax({
+          url: loginForm.attr('action'),
+          type: 'post',
+          dataType: "json",
+          data: loginForm.serialize(),
+          
+          success: function(response){
+            
+            if(!response.error){
+              $("#message").html(response.message);
+              location.reload();
+            }
+            else{
+              $("#message").html(response.message);
+            } 
+          }
+      });
   });
+});
 
 //jobseeker info form submit
 

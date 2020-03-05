@@ -12,7 +12,7 @@ class Login extends CI_Controller {
    redirect('index');
   }
   $this->load->library('form_validation');
-  $this->load->library('encrypt');
+  //$this->load->library('encrypt');
   $this->load->model('login_model');
   $this->load->helper('form');
   
@@ -28,8 +28,7 @@ class Login extends CI_Controller {
 
  function validation()
  {
-
-    $response = array();
+  $response = array();
     $this->form_validation->set_rules('user_email', 'Email Address', 'required|trim|valid_email');
     $this->form_validation->set_rules('user_password', 'Password', 'required');
     if($this->form_validation->run())
