@@ -14,8 +14,9 @@ class Login_model extends CI_Model
 
         if($row->is_email_verified == 1)
         {
-         $store_password = $this->encryptioncustom->decode($row->password);
-         if($password == $store_password)
+         $store_password = $this->encryptioncustom->is_valid_password($password, $row->password);
+          
+         if($row->password == $store_password)
          {
           $this->session->set_userdata('id', $row->talentid);
           return "success";

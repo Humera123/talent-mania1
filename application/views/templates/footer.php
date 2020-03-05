@@ -4,18 +4,17 @@
       <div class="footer_container">
       	<div class=" menu_3nF- footermenu">
       		<div class="bigmenu">
-      			<div class="menu__menuHead_3UEt">About Us</div>
-      			<div class="contentmenu">
+      			<h class="footerheading">About Us </h>
       			<p class="abouttext"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
       			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
       			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
-      			</div>
+      			
       </div>
 
 
        <div class="bigmenu">
-      			<div class="menu__menuHead_3UEt">Important Links</div>
-      			<div class="contentmenu">
+      			<h class="footerheading">Important Links</h><br>
+      			 <div class="contentmenu">
       				<a href="#" class="menulink"> Contact Us</a><br>
       				<a href="#" class="menulink"> Guidelines</a><br>
       				<a href="#" class="menulink"> Community</a><br>
@@ -25,9 +24,9 @@
        </div>
 
      
-      <div class="bigmenu">
-      			<div class="menu__menuHead_3UEt">Get Connected</div>
-      			<div class="contentmenu">
+      <div class="bigmenu" id="socialid">
+      			<h class="footerheading">Get Connected</h>
+      			           <div class="contentmenu">
                     <a href="#"class="sociallink">
                     	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" class="">
                     		<path fill="#FFF" fill-rule="evenodd" d="M3.2 24V13.6H0V8.8h3.2V5.448C3.2 1.797 5.272 0 8.19 0c1.399 0 2.601.116 2.951.168v3.816l-2.025.001c-1.588 0-1.946.842-1.946 2.077V8.8h4.302l-1.434 4.8H7.171V24H3.2z">
@@ -44,7 +43,7 @@
 		             </svg>
 			         
 		              </a>
-      
+                    <br>
                    <a href="#" class="sociallink" >
                    	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#FFF" fill-rule="evenodd" d="M11.984 16.815c2.596 0 4.706-2.111 4.706-4.707 0-1.409-.623-2.674-1.606-3.538-.346-.303-.735-.556-1.158-.748-.593-.27-1.249-.421-1.941-.421s-1.349.151-1.941.421c-.424.194-.814.447-1.158.749-.985.864-1.608 2.129-1.608 3.538 0 2.595 2.112 4.706 4.706 4.706zm.016-8.184c1.921 0 3.479 1.557 3.479 3.478 0 1.921-1.558 3.479-3.479 3.479s-3.479-1.557-3.479-3.479c0-1.921 1.558-3.478 3.479-3.478zm5.223.369h6.777v10.278c0 2.608-2.114 4.722-4.722 4.722h-14.493c-2.608 0-4.785-2.114-4.785-4.722v-10.278h6.747c-.544.913-.872 1.969-.872 3.109 0 3.374 2.735 6.109 6.109 6.109s6.109-2.735 6.109-6.109c.001-1.14-.327-2.196-.87-3.109zm2.055-9h-12.278v5h-1v-5h-1v5h-1v-4.923c-.346.057-.682.143-1 .27v4.653h-1v-4.102c-1.202.857-2 2.246-2 3.824v3.278h7.473c1.167-1.282 2.798-2 4.511-2 1.722 0 3.351.725 4.511 2h7.505v-3.278c0-2.608-2.114-4.722-4.722-4.722zm2.722 5.265c0 .406-.333.735-.745.735h-2.511c-.411 0-.744-.329-.744-.735v-2.53c0-.406.333-.735.744-.735h2.511c.412 0 .745.329.745.735v2.53z"/></svg>
                    </a>

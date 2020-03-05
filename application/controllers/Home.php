@@ -31,7 +31,7 @@ class Home extends CI_Controller {
   if($this->form_validation->run())
   {
    $verification_key = md5(rand());
-   $encrypted_password = $this->encryptioncustom->encode($this->input->post('user_password'));
+   $encrypted_password = $this->encryptioncustom->encrypt_password($this->input->post('user_password'), $this->input->post('user_email'));
    $data = array(
     'type'  => $this->input->post('user_type'),
     'email'  => $this->input->post('user_email'),
