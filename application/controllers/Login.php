@@ -11,13 +11,10 @@ class Login extends CI_Controller {
   {
    redirect('index');
   }
-  $this->load->library('form_validation');
-  //$this->load->library('encrypt');
-  $this->load->model('login_model');
-  $this->load->helper('form');
-  
-
- }
+   $this->load->library('form_validation');
+   $this->load->model('login_model');
+   $this->load->helper('form');
+  }
 
  function index()
  {
@@ -28,13 +25,15 @@ class Login extends CI_Controller {
 
  function validation()
  {
-  $response = array();
+
+    $response = array();
     $this->form_validation->set_rules('user_email', 'Email Address', 'required|trim|valid_email');
     $this->form_validation->set_rules('user_password', 'Password', 'required');
     if($this->form_validation->run())
     {
       $result = $this->login_model->can_login($this->input->post('user_email'), $this->input->post('user_password')); 
-    
+      
+     
         if($result == 'success')
         {          
           $response['message'] = "login success";

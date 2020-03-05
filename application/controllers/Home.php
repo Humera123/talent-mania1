@@ -31,11 +31,11 @@ class Home extends CI_Controller {
   if($this->form_validation->run())
   {
    $verification_key = md5(rand());
-   //$encrypted_password = $this->encryptioncustom->encrypt_password($this->input->post('user_password'),$this->input->post('user_email'));
    $options = array(
       'cost' => 12,
     );
    $encrypted_password = password_hash($this->input->post('user_password'), PASSWORD_BCRYPT, $options);
+
    $data = array(
     'type'  => $this->input->post('user_type'),
     'email'  => $this->input->post('user_email'),

@@ -3,6 +3,7 @@ $(function() {
   $("#loginForm").on('submit', function(e) {
       e.preventDefault();
 
+
       var loginForm = $(this);
 
       $.ajax({
