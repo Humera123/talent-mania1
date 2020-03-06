@@ -8,7 +8,7 @@ class Index extends CI_Controller {
   parent::__construct();
   
   $this->load->library('form_validation');
-  $this->load->library('encrypt');
+  //$this->load->library('encrypt');
   $this->load->model('index_model');
  }
 
