@@ -34,6 +34,7 @@
 
   <body>
     <header>
+      
       <div class="container">
           <nav class="navbar navbar-expand-sm navbar-transparent">
             <a class="navbar-brand" href="#">TALENT MANIA</a>
