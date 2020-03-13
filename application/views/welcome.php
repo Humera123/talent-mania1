@@ -1,7 +1,5 @@
- <br /><br /><h5 align="center">Welcome to TalentMania</h5>
+ <br /><br /><h3 id="mainhead" align="center">Welcome to Talent Mania</h2>
  <p align="center">Lets’s start your profile, personalize your job listings and find companies you’ll love.</p>
-<!--<input type="button" class="btn btn-link"> <a href="<?php echo base_url()?>welcome/logout">Logout</a>-->
-
 <div id='jobseeker_dashboard'>
 <form action="<?php echo base_url();?>welcome/validation" id="jobseeker_info" method="post" enctype="multipart/form-data">
   <!--
@@ -96,31 +94,31 @@
 </p>
 
   <p>
-    <label for="linkdin_profile">Linkdin Profile</label>
+    <label for="linkdin_profile">LinkedIn Profile</label>
     <input  type="text" name="linkdin_profile" id="linkdin_profile" class="form-control" value="<?php echo set_value('linkdin_profile',$form['linkdin_profile']); ?>" />
   <span class="text-danger"><?php echo form_error('linkdin_profile'); ?></span>
 </p>
 
   <p>
+     <label for="gender">Gender</label>
     <select name="gender" id="gender" class="form-control" value="<?php echo set_value('gender'); ?>">
-      <option value="1">Gender</option>
-      <option value="2">Female</option>
-      <option value="3">Male</option>
-      <option value="4">Not Specified</option>
+      <option value="1">Female</option>
+      <option value="2">Male</option>
+      <option value="3">Not Specified</option>
     </select>
     <span class="text-danger"><?php echo form_error('gender'); ?></span>
   </p>
 
 <br>
-/*for cnic front image upload*/
-<!--
+<!for cnic front image upload-->
+
 <main class="main_full">
   <div class="container">
     <div class="panel">
       <div class="button_outer">
         <div class="btn_upload">
           <input type="file" id="upload_file" name="">
-          Upload front Igmage
+          Upload front CNIC Image
         </div>
         <div class="processing_bar"></div>
         <div class="success_box"></div>
@@ -134,7 +132,7 @@
 </main>
 
 
-
+<script>
 var btnUpload = $("#upload_file"),
     btnOuter = $(".button_outer");
   btnUpload.on("change", function(e){
@@ -159,9 +157,7 @@ var btnUpload = $("#upload_file"),
     btnOuter.removeClass("file_uploading");
     btnOuter.removeClass("file_uploaded");
   });
--->
-
-
+</script>
 
 <?php 
   if($form['cnic_front'])
@@ -179,7 +175,7 @@ var btnUpload = $("#upload_file"),
     ?>
    <p>
     <label> Upload CNIC Front Image :</label>
-     <img name="fcnicimage" id="fcnicimage" width="100"alt="Front CNIC image" /></p>
+    <!-- <img name="fcnicimage" id="fcnicimage" width="100" alt="Front CNIC image" /></p>-->
   <input type="file" name="cnic_front" id="cnic_front" accept="image/gif, image/jpeg, image/png" onchange="loadimage(event,'fcnicimage')">
   <p><span class="text-danger"><?php echo form_error('cnic_front'); ?></span></p>
 <?php
@@ -201,8 +197,8 @@ var btnUpload = $("#upload_file"),
   {
     ?>
    <p>
-    <label> Upload CNIC Back Image :</label>
-    <img name="bcnicimage" id="bcnicimage" width="100"alt="Back CNIC image" /></p>
+    <label> Upload CNIC Back Image   :</label>
+    <!--<img name="bcnicimage" id="bcnicimage" width="100"alt="Back CNIC image" /></p>-->
   <input type="file" name="cnic_back" id="cnic_back" accept="image/gif, image/jpeg, image/png" onchange="loadimage(event,'bcnicimage')">
   
   <p><span class="text-danger"><?php echo form_error('cnic_back'); ?></span></p>
@@ -219,7 +215,7 @@ var btnUpload = $("#upload_file"),
   if($form['last_degree'])
   {
   ?>
-   <p class="float-left"><label>Latest Degree Image:</label>
+   <p class="float-left"><label>Last Degree Image:</label>
    <img src="<?php echo base_url().'uploads/'.$form['last_degree'] ?>" name="lastdegreeimg" id="lastdegreeimg" width="100"alt="Latest degree image" />
   <input type="hidden" name="last_degree_value" id= "last_degree_value" value="<?php echo set_value('last_degree', $form['last_degree']); ?>"/></p>
   <?php
@@ -228,8 +224,8 @@ var btnUpload = $("#upload_file"),
   {
     ?>
    <p>
-    <label> Upload Latest Degree Image :</label>
-     <img name="lastdegreeimg" id="lastdegreeimg" width="100"alt=" Latest Degree Image"/>
+    <label> Upload Last Degree Image:</label>
+     <!--<img name="lastdegreeimg" id="lastdegreeimg" width="100"alt=" Latest Degree Image"/>-->
   <input type="file" name="last_degree" id="last_degree" accept="image/gif, image/jpeg, image/png" onchange="loadimage(event,'lastdegreeimg')">
  </p>
   <p><span class="text-danger"><?php echo form_error('last_degree'); ?></span></p>
@@ -237,8 +233,9 @@ var btnUpload = $("#upload_file"),
   }
   
   ?>
-  <p><input type="submit" name="Submit" value="Submit" id="formsubmit"/></p>
-  <?php echo form_close() ?>
+  <input type="submit" name="Submit" value="Submit" id="formsubmit"/>
+  <input type="button" class="btn btn-link"> <a href="<?php echo base_url()?>welcome/logout">Logout</a></p>
+  <?php echo form_close()?>
 </div>
 </form>
 
@@ -250,4 +247,5 @@ var btnUpload = $("#upload_file"),
     // body...
   }
 </script>
+
  

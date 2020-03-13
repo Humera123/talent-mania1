@@ -4,7 +4,7 @@
          <meta charset="utf-8">
    
        
-        
+      
         <link rel = "stylesheet" type = "text/css" href = "<?php echo base_url(); ?>css/bootstrap.min.css">        
 
         <link rel = "stylesheet" type = "text/css" href = "<?php echo base_url(); ?>css/custom_style.css">
@@ -145,6 +145,12 @@
             </div> 
           </nav>
      </div>
+     
+     <script src ='<?php base_url();?> http://localhost/talentmania.com/welcome.php'>
+      document.getElementById('navbarSupportedContent').style.display = 'none';
+  
+</script>
+
     </header>
 
         
