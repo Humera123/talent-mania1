@@ -624,13 +624,15 @@ span.link{
   margin-left: 25%;
 }
 .menulink{
-  color: hsla(0,0%,100%,.8);
+  color: #ffffff;
+  text-decoration: none;
     font-size: 16px;
    margin-left: 10%;
    line-height: 2;
 }
 .menulink:hover{
-  color: #ffffff;
+    color: #ffffff;
+     text-decoration: none;
 }
 .sociallink svg{
     margin-left: 30px;
@@ -1322,3 +1324,70 @@ body {background: #f6f6f6; color: #444; font-family: 'Roboto', sans-serif; font-
 #companysubmit{
    margin-left: 35%;
 }
+#logoutbutton{
+  margin-left: 60%;
+  font-size: 16px;
+  font-weight: bold;
+  color: #007d91;
+}
+
+/*admin.php file styling*/
+#panalistbtn{
+  width:10%;
+  height:40px;
+  background-color: #87CEEB;
+  color: #ffffff;
+  font-size: 14px;
+  border-radius: 4px;
+  margin-left: 15%;
+}
+#search{
+  margin-left:5%;
+}
+#goo{
+  margin-left:3%;
+}
+.acjpstyling{
+font-size: 13px;
+    color: #007d91;
+    background-color: #007d91;
+    width: 100px;
+    height: 40px;
+    }
+    .linking{
+      color: #ffffff;
+    }
+     .linking:hover{
+      color: #ffffff;
+    }
+    /*for logout link in header*/
+    #logoutlink{
+      color:#007d91;
+      font-size: 22px;
+      font-weight: bold;
+      font-family: arial;
+      margin-left: 70%;
+      text-decoration: none;
+    }
+    #cpjsbtn{
+  width:10%;
+  height:40px;
+  margin-left: 2%;
+  margin-right: 1%;
+  background-color: #5ec621;
+  color: #ffffff;
+  font-size: 14px;
+  border-radius: 6%;
+  border-color: #5ec621;
+    }
+    /*for bootstrap table*/
+    .content{
+    padding: 30px 15px;
+    min-height: calc(100vh - 123px);
+  }
+ #tableheads{
+font-size: 12px;
+font-family: arial;
+ }
+
+ 

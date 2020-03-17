@@ -1,3 +1,19 @@
+ <script>
+$(document).ready(function(){
+    $("header").hide();
+});
+</script>
+ <br>
+<div class="container">
+          <nav class="navbar navbar-expand-sm navbar-transparent">
+            <a class="navbar-brand" href="#">TALENT MANIA</a>
+            <a  id="logoutlink" href="<?php echo base_url()?>welcome/logout">Logout</a>  
+            <!--<button  id="panalistbtn"  onclick="window.location='<?php echo base_url()?>welcome/logout'">Logout</button>-->
+              </nav>
+     </div>
+
+
+
 <?php 
    if($this->session->flashdata('true'))
    {
@@ -8,47 +24,68 @@
 }
 ?>
 <br>
-<p align="center"><a href="<?php echo base_url()?>welcome/logout">Logout</a></p>
-<a href="<?php echo base_url()?>admindashboard/company_data">Showing Company Data</a> 
-<a href="<?php echo base_url()?>admindashboard/panel_data">Showing Panel Data </a> 
-<a href="<?php echo base_url()?>admindashboard/jobSeeker_data">Showing JobSeeker Data</a> 
-<button type="submit" onclick="window.location='<?php echo base_url()?>admindashboard/assign'">Assign Panalist</button>
+<!--<p align="center"><a href="<?php echo base_url()?>welcome/logout">Logout</a></p>-->
 
+<!--<a href="/enterprise" target="_blank" class="pure-button pure-button-primary">See Solutions</a>-->
+ 
+<button  id="cpjsbtn" onclick="window.location='<?php echo base_url()?>admindashboard/company_data'">Company Data</button>
+<button  id="cpjsbtn" onclick="window.location='<?php echo base_url()?>admindashboard/panel_data'">Panel Data</button>
+<button  id="cpjsbtn" onclick="window.location='<?php echo base_url()?>admindashboard/jobSeeker_data'">JobSeeker Data</button>
+<!--
+ <a href= "<?php echo base_url()?>admindashboard/company_data"> Company Data</a>
+ <a href="<?php echo base_url()?>admindashboard/panel_data">Panel Data </a> 
+<a href="<?php echo base_url()?>admindashboard/jobSeeker_data">JobSeeker Data</a>
+-->
+
+<button  id="panalistbtn"type="submit" onclick="window.location='<?php echo base_url()?>admindashboard/assign'">Assign Panalist</button>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 <?php
 if($this->uri->segment(2)=="company_data" || $this->uri->segment(2)=="company_data_filter")
 {
 	?>
-	<h3>Company Data :</h3><br />  
+	<h3 id="mainhead" align="center">Company Data</h3><br />  
               <form class="form-inline" action="<?php echo base_url() . 'admindashboard/company_data_filter'; ?>" method="post">
                 <select class="form-control" name="field">
                   <option selected="selected" disabled="disabled" value="">Filter By</option>
                   <option <?php if (isset($_POST["field"]) && $_POST["field"]=="name_of_organization" && !empty($_POST['search'])) echo "selected"?> value="name_of_organization">name_of_organization</option>
                 </select>
-                <input class="form-control" type="text" id="search" name="search" value="<?php echo isset($_POST['search']) ? $_POST['search'] : '' ?>" placeholder="Search...">
-                <input class="btn btn-default" type="submit" name="filter" value="Go">
-              </form>
 
+                <input class="form-control" type="text" id="search" name="search" value="<?php echo isset($_POST['search']) ? $_POST['search'] : '' ?>" placeholder="Search...">
+                <input class="btn btn-default" type="submit" name="filter" value="Go" id="goo">
+              </form>
+<br/><br/> 
+<div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card bootstrap-table">
+                                <div class="card-body table-full-width">
               <div class="table-responsive">  
-              <table class="table table-striped">  
+              <table class="table table-striped   table-bordered">  
                <thead>
-                <tr>  
-                     <th>Company_no</th>  
-                     <th>logoimage</th>  
-                     <th>name_of_organizatio</th>  
-                     <th>industry_type</th> 
-                     <th>sector</th> 
-                     <th>address</th>
-                     <th>phoneno</th>
-                     <th>mobileno</th>  
-                     <th>website_link</th>  
-                     <th>facebook</th>  
-                     <th>ceo_name</th>  
-                     <th>skype_id</th>  
-                     <th>email_ceo</th>  
-                     <th>focal_name</th>  
-                     <th>ntn_no</th>  
-                     <th>employee_no</th>  
+                <tr >  
+                     <th  >No#</th>  
+                     <th>Logo</th>  
+                     <th>Organization</th>  
+                     <th>Industry</th> 
+                     <th>Sector</th> 
+                     <th>Address</th>
+                     <th>Phone</th>
+                     <th>Mobile</th>  
+                     <th>Website</th>  
+                     <th>Facebook</th>  
+                     <th>CEO</th>  
+                     <th>skype</th>  
+                     <th>CEO Email</th>  
+                     <th>Focal Name</th>  
+                     <th>NTN</th>  
+                     <th>Employee ID</th>  
 
                 </tr> 
                 </thead> 
@@ -60,7 +97,7 @@ if($this->uri->segment(2)=="company_data" || $this->uri->segment(2)=="company_da
            ?>  <tbody>
                 <tr>  
                      <td><?php echo "$row->company_no" ?></td> 
-                     <td><img src="<?php echo base_url().'uploads/'.$row->logoimage?>" width="100px"/></td> 
+                     <td><img src="<?php echo base_url().'uploads/'.$row->logoimage?>" width="50px"/></td> 
                      <td><a href="<?php echo base_url() . "admindashboard/view_company_job/" . $row->company_no; ?>"><?php echo "$row->name_of_organization" ?></a></td>
                      <td><?php echo "$row->industry_type" ?></td>
                      <td><?php echo "$row->sector" ?></td>
@@ -91,6 +128,12 @@ if($this->uri->segment(2)=="company_data" || $this->uri->segment(2)=="company_da
            ?>  
            </table>  
       </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
       <?php
 }
 else if ($this->uri->segment(2)=="panel_data" || $this->uri->segment(2)=="panel_data_filter")
@@ -246,7 +289,7 @@ else
 	?>
 	<div class="table-responsive">  
               <table class="table table-bordered">  
-                <tr>  Nothing is to shown </tr>
+                <tr>  Nothing is to  be shown </tr>
            </table>
        </div>
        <?php
