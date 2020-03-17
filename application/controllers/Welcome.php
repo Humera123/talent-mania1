@@ -33,7 +33,7 @@ class Welcome extends CI_Controller {
 		$this->load->library('form_validation');
 		$this->load->helper(array('form', 'url'));
 		$this->load->helper('form');
-		$this->load->library('encryptioncustom');
+		//$this->load->library('encryptioncustom');
 		$this->load->model('welcome_model');
 	}
 

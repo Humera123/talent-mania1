@@ -98,7 +98,24 @@ class Home extends CI_Controller {
    $this->load->view('email_verification', $data);
   }
  }
+ 
+ 
+ function fbvalidation()
+ {
+   $result = $this->home_model->fblogin($this->input->post('email'));
+   if($result == 'success')
+   {          
+     $response['message'] = "login success";
+        
+   }
+   else
+   {
+     $response['message'] = $result;  
+  
+   }
+ }
 
 }
+
 
 ?>

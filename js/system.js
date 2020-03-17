@@ -9,7 +9,7 @@ $(function() {
       $.ajax({
           url: loginForm.attr('action'),
           type: 'post',
-          dataType: "json",
+                
           data: loginForm.serialize(),
           
           success: function(response){
