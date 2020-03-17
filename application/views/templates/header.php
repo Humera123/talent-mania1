@@ -4,7 +4,7 @@
          <meta charset="utf-8">
    
        
-        
+      
         <link rel = "stylesheet" type = "text/css" href = "<?php echo base_url(); ?>css/bootstrap.min.css">        
 
         <link rel = "stylesheet" type = "text/css" href = "<?php echo base_url(); ?>css/custom_style.css">
@@ -34,12 +34,13 @@
 
   <body>
     <header>
+      
       <div class="container">
           <nav class="navbar navbar-expand-sm navbar-transparent">
             <a class="navbar-brand" href="#">TALENT MANIA</a>
-            <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-              </button>-->
+              </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav ml-auto">
@@ -144,6 +145,12 @@
             </div> 
           </nav>
      </div>
+     
+     <script src ='<?php base_url();?> http://localhost/talentmania.com/welcome.php'>
+      document.getElementById('navbarSupportedContent').style.display = 'none';
+  
+</script>
+
     </header>
 
         
