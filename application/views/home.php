@@ -1,4 +1,68 @@
  
+<script>
+  function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
+    console.log('statusChangeCallback');
+    console.log(response);                   // The current login status of the person.
+    if (response.status === 'connected') {   // Logged into your webpage and Facebook.
+      testAPI();  
+    } else {                                 // Not logged into your webpage or we are unable to tell.
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into this webpage.';
+    }
+  }
+
+  function checkLoginState() {               // Called when a person is finished with the Login Button.
+    FB.getLoginStatus(function(response) {   // See the onlogin handler
+      statusChangeCallback(response);
+    });
+  }
+</script>
+<div id="fb-root"></div>
+  <!--- facebook code --->
+
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0&appId=132652444702292&autoLogAppEvents=1"></script>
+
+  <script>
+
+FB.getLoginStatus(function(response) {   // Called after the JS SDK has been initialized.
+      statusChangeCallback(response);        // Returns the login status.
+    });
+ 
+
+  
+  (function(d, s, id) {                      // Load the SDK asynchronously
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+ 
+  function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+      console.log(response);
+      email  = response.email;
+        alert(response.email);                        
+      $.ajax({
+          url: '<?php echo base_url()?>'  + 'home/fbvalidation',
+          type:  "POST",        
+          dataType: "json",
+          data: { email: email},
+          success: function(response){
+            
+            if(response.message == "success"){
+              $("#message").html(response.message);
+              location.reload();
+            }
+            else{
+              $("#message").html(response.message);
+            } 
+          }        });   
+    });
+  }
+</script>
 <section class="sectionone">
   <div class="bannerImage">
       <div class="signup   align-items-center justify-content-center">
@@ -9,9 +73,11 @@
                 <p class="legaltext1">
                   By continuing, you agree to our <a href="#" target="_blank" rel=" " class="link">Terms of Use</a> and <a href="#" target="_blank" rel="" class="link">Privacy Policy</a>.</p>
                                   <div>
-                                   <button class="inlinefacebook">
+                                  <!-- <fb:login-button scope="public_profile,email" onlogin="checkLoginState()"></fb:login-button>
+                                  <div id="status"></div> -->
+                                  <button class="inlinefacebook">
                                     <span class="label">Continue with Facebook</span>
-                                 </button> 
+                                 </button>
                                   <button class="inlinegoogle">
                                     <span class="label">Continue with Google</span>
                                   </button>
