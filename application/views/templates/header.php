@@ -30,6 +30,17 @@
            <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="keywords" content="footer, address, phone, icons" />
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-160652991-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-160652991-1');
+</script>
+
           </head>
 
   <body>
@@ -146,10 +157,10 @@
           </nav>
      </div>
      
-     <script src ='<?php base_url();?> http://localhost/talentmania.com/welcome.php'>
-      document.getElementById('navbarSupportedContent').style.display = 'none';
+     <!--<script src ='<?php base_url();?> http://localhost/talentmania.com/welcome.php'>
+      document.getElementById('navbarSupportedContent').style.display = 'none';-->
   
-</script>
+ 
 
     </header>
 
