@@ -46,6 +46,7 @@ $(document).ready(function(){
 <br>
 
 <?php
+
 if($this->uri->segment(2)=="company_data" || $this->uri->segment(2)=="company_data_filter")
 {
 	?>

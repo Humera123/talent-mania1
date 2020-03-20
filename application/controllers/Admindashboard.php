@@ -26,20 +26,22 @@ class Admindashboard extends CI_Controller {
 		// {
 		// 	redirect('index');
 	 //  }
-		$this->load->library('encryptioncustom');
+		//$this->load->library('encryptioncustom');
 		$this->load->model('admindashboard_model');
 	}
 
 	function index()
 	{
 		$this->load->view('templates/header');
-		$this->load->view('admin');
+		$result['jobseekers_count']=$this->admindashboard_model->totaljob_assigned();
+		$this->load->view('admin',$result);
 		$this->load->view('templates/footer');
     }
 
     function admin($result)
     {
-    	$this->load->view('templates/header');
+		$this->load->view('templates/header');
+		$result['jobseekers_count']=$this->admindashboard_model->totaljob_assigned();
 		$this->load->view('admin',$result);
 		$this->load->view('templates/footer');
     }
@@ -51,19 +53,22 @@ class Admindashboard extends CI_Controller {
 
     function company_data()
     {
-    	$result['data']=$this->admindashboard_model->company_retrieve_info();
+		$result['data']=$this->admindashboard_model->company_retrieve_info();
+		$result['jobseekers_count']=$this->admindashboard_model->totaljob_assigned();
     	$this->admin($result); 
     }
 
     function panel_data()
     {
-    	$result['data']=$this->admindashboard_model->panel_retrieve_info();
+		$result['data']=$this->admindashboard_model->panel_retrieve_info();
+		$result['jobseekers_count']=$this->admindashboard_model->totaljob_assigned();
     	$this->admin($result); 
     }
 
     function jobseeker_data()
     {
-    	$result['data']=$this->admindashboard_model->jobseeker_retrieve_info();
+		$result['data']=$this->admindashboard_model->jobseeker_retrieve_info();
+		$result['jobseekers_count']=$this->admindashboard_model->totaljob_assigned();
     	$this->admin($result); 
     }
 
@@ -71,7 +76,8 @@ class Admindashboard extends CI_Controller {
     {
     	$search_value=$this->input->post('search');
     	$field_name=$this->input->post('field');
-    	$result['data']=$this->admindashboard_model->jobseeker_data_filter($search_value,$field_name);
+		$result['data']=$this->admindashboard_model->jobseeker_data_filter($search_value,$field_name);
+		$result['jobseekers_count']=$this->admindashboard_model->totaljob_assigned();
     	$this->admin($result); 
 
     }
@@ -80,14 +86,16 @@ class Admindashboard extends CI_Controller {
    	{
 		$search_value=$this->input->post('search');
     	$field_name=$this->input->post('field');
-    	$result['data']=$this->admindashboard_model->panel_data_filter($search_value,$field_name);
+		$result['data']=$this->admindashboard_model->panel_data_filter($search_value,$field_name);
+		$result['jobseekers_count']=$this->admindashboard_model->totaljob_assigned();
     	$this->admin($result);    		
    	}
 
    	function company_data_filter()
    	{
    		$search_value=$this->input->post('search');
-    	$field_name=$this->input->post('field');
+		$field_name=$this->input->post('field');
+		$result['jobseekers_count']=$this->admindashboard_model->totaljob_assigned();
     	$result['data']=$this->admindashboard_model->company_data_filter($search_value,$field_name);
     	$this->admin($result); 
    	}
@@ -96,6 +104,7 @@ class Admindashboard extends CI_Controller {
    	{
    		$cid = $this->uri->segment(3);
 		$result['data']=$this->admindashboard_model->retreive_company_jobs($cid);
+		$result['jobseekers_count']=$this->admindashboard_model->totaljob_assigned();
 		$this->load->view('templates/header');
     	$this->load->view('company_job',$result);
     	$this->load->view('templates/footer');
@@ -105,7 +114,8 @@ class Admindashboard extends CI_Controller {
    	{
    		$search_value=$this->input->post('search');
     	$field_name=$this->input->post('field');
-    	$result['data']=$this->admindashboard_model->company_job_filter($search_value,$field_name);
+		$result['data']=$this->admindashboard_model->company_job_filter($search_value,$field_name);
+		$result['jobseekers_count']=$this->admindashboard_model->totaljob_assigned();
     	$this->load->view('templates/header');
     	$this->load->view('company_job',$result);
     	$this->load->view('templates/footer');
@@ -114,7 +124,8 @@ class Admindashboard extends CI_Controller {
 
     function assign()
     {
-      $result['data']=$this->admindashboard_model->assign_panelist(); 
+	  $result['data']=$this->admindashboard_model->assign_panelist();
+	  $result['jobseekers_count']=$this->admindashboard_model->totaljob_assigned(); 
       $this->load->view('admin',$this->session->set_flashdata('true', 'Successfully Panelist Alot'));     
     }
 
@@ -126,6 +137,11 @@ class Admindashboard extends CI_Controller {
 			$this->session->unset_userdata($row);
 		}
 		redirect('home');
+	}
+
+	function totaljob_assigned(){
+
+		$this->admindashboard_model->totaljob_assigned();	
 	}
 }
 

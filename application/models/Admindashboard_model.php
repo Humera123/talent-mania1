@@ -127,6 +127,30 @@ class Admindashboard_model extends CI_Model
       $query=$this->db->query($sql);
       }
   }
+
+  function totaljob_assigned(){
+    $sql = "SELECT cnic FROM jobseeker_info WHERE hired=1";
+    $query=$this->db->query($sql);
+    return count($query->result());
+  }
+
+  function totaljobseekers(){
+    $sql = "SELECT talentid FROM jobseeker_user WHERE type=1";
+    $query=$this->db->query($sql);
+    return count($query->result());
+  }
+
+  function totalcompanies(){
+    $sql = "SELECT talentid FROM jobseeker_user WHERE type=2";
+    $query=$this->db->query($sql);
+    return count($query->result());
+  }
+
+  function totalpanalist(){
+    $sql = "SELECT talentid FROM jobseeker_user WHERE type=3";
+    $query=$this->db->query($sql);
+    return count($query->result());
+  }
   
 }
 
