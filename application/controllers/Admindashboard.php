@@ -32,10 +32,12 @@ class Admindashboard extends CI_Controller {
 
 	function index()
 	{
+
 		$this->load->view('templates/header');
 		$result['jobseekers_count']=$this->admindashboard_model->totaljob_assigned();
 		$this->load->view('admin',$result);
 		$this->load->view('templates/footer');
+
     }
 
     function admin($result)
