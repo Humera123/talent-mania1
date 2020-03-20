@@ -1,6 +1,5 @@
- <?php
-defined('BASEPATH') OR exit('No direct script access allowed');?>
-  <!doctype html>
+ 
+  <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
@@ -11,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>TALENT MANIA -Dashboard</title>
+    <title>Sufee Admin - HTML5 Admin Template</title>
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -19,11 +18,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
     <link rel="shortcut icon" href="favicon.ico">
 
 <!--<?php echo base_url(); ?>assets/-->
-    <link rel="stylesheet"  href=" <?php echo base_url(); ?>assets/vendors/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet"  href=" <?php echo base_url(); ?>assets/vendors/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet"  href="<?php echo base_url(); ?>assets/vendors/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet"  href="<?php echo base_url(); ?>assets/vendors/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendors/themify-icons/css/themify-icons.css">
-    <link rel="stylesheet"  href=" vendors/flag-icon-css/css/flag-icon.min.css">
-    <link rel="stylesheet" href="/php echo base_url(); ?>assets/vendors/selectFX/css/cs-skin-elastic.css">
+    <link rel="stylesheet"  href="<?php echo base_url(); ?>assets/vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendors/selectFX/css/cs-skin-elastic.css">
 
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css">
 
@@ -43,8 +42,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="./">TALENT MANIA<!--<img src=  "images/logo.png" alt="Logo">--></a>
-                <a class="navbar-brand hidden" href="./">TM<!--<img src=  "images/logo2.png" alt="Logo">--></a>
+                <a class="navbar-brand" href="./"><img src=  "<?php echo base_url(); ?>assets/images/logo.png" alt="Logo"></a>
+                <a class="navbar-brand hidden" href="./"><img src=  "<?php echo base_url(); ?>assets/images/logo2.png" alt="Logo"></a>
             </div>
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
@@ -72,7 +71,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
                     <li class="menu-item-has-children active dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-table"></i><a href=  "tables-basic.php">Basic Table</a></li>
+                            <li><i class="fa fa-table"></i><a href=  "tables-basic.html">Basic Table</a></li>
                             <li><i class="fa fa-table"></i><a href=  "tables-data.html">Data Table</a></li>
                         </ul>
                     </li>
@@ -257,39 +256,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
             </div>
 
         </header><!-- /header -->
+        <!-- Header-->
 
-
-<?php 
-   if($this->session->flashdata('true'))
-   {
- ?>
-   <div class="alert alert-success"> 
-     <?php  echo $this->session->flashdata('true'); ?>
-<?php    
-}
-?>
-<button  id="cpjsbtn" onclick="window.location='<?php echo base_url()?>Datatables/company_data'">Company Data</button>
-<button  id="cpjsbtn" onclick="window.location='<?php echo base_url()?>Datatables/panel_data'">Panel Data</button>
-<button  id="cpjsbtn" onclick="window.location='<?php echo base_url()?>Datatables/jobSeeker_data'">JobSeeker Data</button>
- 
-<button  id="panalistbtn"type="submit" onclick="window.location='<?php echo base_url()?>Datatables/assign'">Assign Panalist</button>
-<br>
-<?php
-if($this->uri->segment(2)=="company_data" || $this->uri->segment(2)=="company_data_filter")
-{
-    ?>
-    <h3 id="mainhead" align="center">Company Data</h3><br />  
-              <form class="form-inline" action="<?php echo base_url() . 'Datatables/company_data_filter'; ?>" method="post">
-                <select class="form-control" name="field">
-                  <option selected="selected" disabled="disabled" value="">Filter By</option>
-                  <option <?php if (isset($_POST["field"]) && $_POST["field"]=="name_of_organization" && !empty($_POST['search'])) echo "selected"?> value="name_of_organization">name_of_organization</option>
-                </select>
-
-                <input class="form-control" type="text" id="search" name="search" value="<?php echo isset($_POST['search']) ? $_POST['search'] : '' ?>" placeholder="Search...">
-                <input class="btn btn-default" type="submit" name="filter" value="Go" id="goo">
-              </form>-->
-
-<br>
         <div class="breadcrumbs">
             <div class="col-sm-4">
                 <div class="page-header float-left">
@@ -303,150 +271,98 @@ if($this->uri->segment(2)=="company_data" || $this->uri->segment(2)=="company_da
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
                             <li><a href="#">Dashboard</a></li>
-                            <li><a href="#">Users DataTables</a></li>
-                            <li class="active">Jobseekers</li>
+                            <li><a href="#">Table</a></li>
+                            <li class="active">Basic table</li>
                         </ol>
                     </div>
                 </div>
             </div>
         </div>
 
-
         <div class="content mt-3">
             <div class="animated fadeIn">
                 <div class="row">
+
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-header">
-                                <strong class="card-title">Company Data</strong>
+                                <strong class="card-title">Table Head</strong>
                             </div>
                             <div class="card-body">
-                                <table class="table table-striped table-bordered">
-                                    <thead>
-                                        <tr> 
-                     <th scope="col">Logo</th>  
-                     <th scope="col">Organization</th>  
-                     <th scope="col">Industry</th> 
-                     <th scope="col">Sector</th> 
-                     <th scope="col">Address</th>
-                     <th scope="col"> Phone</th>
-                     <th scope="col">Mobile</th>  
-                     <th scope="col">Website</th>  
-                     <th scope="col">Facebook</th>  
-                     <th scope="col">CEO</th>  
-                     <th scope="col">skype</th>  
-                     <th scope="col">CEO Email</th>  
-                     <th scope="col">Focal Name</th>  
-                     <th scope="col">NTN</th>  
-                     <th scope="col">Employee ID</th>  
-
+                                <table class="table">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                        <th scope="col">No#</th>
+                                        <th scope="col">Logo</th>  
+                                        <th scope="col">Organization</th>  
+                                        <th scope="col">Industry</th> 
+                                        <th scope="col">Sector</th> 
+                                        <th scope="col">Address</th>
+                                        <th scope="col"> Phone</th>
+                                        <th scope="col">Mobile</th>  
+                                        <th scope="col">Website</th>  
+                                        <th scope="col">Facebook</th>  
+                                        <th scope="col">CEO</th>  
+                                        <th scope="col">skype</th>  
+                                        <th scope="col">CEO Email</th>  
+                                        <th scope="col">Focal Name</th>  
+                                        <th scope="col">NTN</th>  
+                                        <th scope="col">Employee ID</th>
                                         </tr>
-                                    </thead>              
-                
-    <?php              
-  if($data)  
-           {  
-             foreach ($data as $row) 
-                {  
-           ?> 
- 
+                                    </thead>
                                     <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                              <td><?php echo "$row->company_no" ?></td> 
-                                        </tr>
-
-                                        <tr>
-                                            <th scope="row">2</th>
-                                             <td><img src="<?php echo base_url().'uploads/'.$row->logoimage?>" width="50px"/></td> 
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                             <td><a href="<?php echo base_url() . "admindashboard/view_company_job/" . $row->company_no; ?>"><?php echo "$row->name_of_organization" ?></a></td>
-                                        </tr>
-                                         <tr>
-                                            <th scope="row">4</th>
-                                          <td><?php echo "$row->industry_type" ?></td>
-                                           </tr>
-                                           <tr>
-                                            <th scope="row">5</th>
-                                          <td><?php echo "$row->sector" ?></td>
-                                           </tr>
-                    <tr>
-                        <th scope="row">6</th>
-                     <td><?php echo "$row->address" ?></td>
-                 </tr>
-                 <tr>
-                    <th scope="row">7</th>
-                     <td><?php echo "$row->phoneno"?></td>
-                 </tr>
-                 <tr>
-                    <th scope="row">8</th>
-                     <td><?php echo "$row->mobileno"?></td>
-                 </tr>
-                 <tr>
-                    <th scope="row">9</th>
-                     <td><?php echo "$row->website_link"?></td>
-                 </tr>
-                 <tr>
-                    <th scope="row">10</th>
-                     <td><?php echo "$row->facebook"?></td>
-                 </tr>
-                 <tr>
-                    <th scope="row">11</th>
-                     <td><?php echo "$row->ceo_name"?></td>
-                 </tr>
-                 <tr>
-                    <th scope="row">12</th>
-                     <td><?php echo "$row->skype_id"?></td>
-                 </tr>
-                 <tr>
-                    <th scope="row">13</th>
-                     <td><?php echo "$row->email_ceo"?></td>
-                 </tr>
-                 <tr>
-                    <th scope="row">14</th>
-                     <td><?php echo "$row->focal_name"?></td>
-                 </tr>
-                 <tr>
-                    <th scope="row">15</th>
-                     <td><?php echo "$row->ntn_no"?></td>
-                 </tr>
-                 <tr>
-                    <th scope="row">16</th>
-                     <td><?php echo "$row->employee_no"?></td>
-                                        </tr>
+                                    <?php if($data)  
+                                            {
+                                                foreach($data as $row){?>
+                                                    <tr>
+                                                        <td><?php echo "$row->company_no" ?></td> 
+                                                        <td><img src="<?php echo base_url().'uploads/'.$row->logoimage?>" width="50px"/></td> 
+                                                        <td><a href="<?php echo base_url() . "admindashboard/view_company_job/" . $row->company_no; ?>"><?php echo "$row->name_of_organization" ?></a></td>
+                                                        <td><?php echo "$row->industry_type" ?></td>
+                                                        <td><?php echo "$row->sector" ?></td>
+                                                        <td><?php echo "$row->address" ?></td>
+                                                        <td><?php echo "$row->phoneno"?></td>
+                                                        <td><?php echo "$row->mobileno"?></td>
+                                                        <td><?php echo "$row->website_link"?></td>
+                                                        <td><?php echo "$row->facebook"?></td>
+                                                        <td><?php echo "$row->ceo_name"?></td>
+                                                        <td><?php echo "$row->skype_id"?></td>
+                                                        <td><?php echo "$row->email_ceo"?></td>
+                                                        <td><?php echo "$row->focal_name"?></td>
+                                                        <td><?php echo "$row->ntn_no"?></td>
+                                                        <td><?php echo "$row->employee_no"?></td>
+                                                    </tr>
+                                                <?php }
+                                            } ?>
                                     </tbody>
+                                </table>
 
-         <?php       
-                }  
-           }  
-           else  
-           {  
-           ?>  
-                <tr>  
-                     <td colspan="15">No Data Found</td>  
-                </tr>  
-           <?php  
-           }  
-           ?> 
-                             </table>
                             </div>
                         </div>
+                    </div>
+
+
                     
 
-                   
+                    
 
+                    
                 </div>
             </div><!-- .animated -->
         </div><!-- .content -->
+
+
     </div><!-- /#right-panel -->
 
     <!-- Right Panel -->
+
+
     <script src=  "<?php echo base_url(); ?>assets/vendors/jquery/dist/jquery.min.js"></script>
     <script src=  "<?php echo base_url(); ?>assets/vendors/popper.js/dist/umd/popper.min.js"></script>
     <script src=  "<?php echo base_url(); ?>assets/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src=  "<?php echo base_url(); ?>assets/js/main.js"></script>
+
+
 </body>
+
 </html>
- 

@@ -35,15 +35,16 @@ class Datatables extends CI_Controller {
   function index()
   {
     /*$this->load->view('templates/header');*/
-    $this->load->view('tablesbasic');
+    $result['data']=$this->admindashboard_model->company_retrieve_info();
+    $this->load->view('tablesbasic',$result);
     /*$this->load->view('templates/footer');*/
     }
 
-    function admin($result)
+    function tablesbasic($result)
     {
       $this->load->view('templates/header');
-    $this->load->view('tablesbasic',$result);
-    $this->load->view('templates/footer');
+      $this->load->view('tablesbasic',$result);
+      $this->load->view('templates/footer');
     }
     
     function loadIndex()

@@ -15,7 +15,7 @@ class Index extends CI_Controller {
  function index()
  {
     
-    $this->load->view('templates/header');
+   
 
     $type = $this->loadFile();
     if($type == 1){
@@ -30,7 +30,7 @@ class Index extends CI_Controller {
     else if($type == 4){
         $this->admindashboard();
     }
-    $this->load->view('templates/footer');
+    
  }
 
  function loadFile(){
