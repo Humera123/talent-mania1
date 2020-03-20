@@ -257,7 +257,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
             </div>
 
         </header><!-- /header -->
-        <!-- Header-->
+
 
 <?php 
    if($this->session->flashdata('true'))
@@ -268,23 +268,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
 <?php    
 }
 ?>
-<button  id="cpjsbtn" onclick="window.location='<?php echo base_url()?>admindashboard/company_data'">Company Data</button>
-<button  id="cpjsbtn" onclick="window.location='<?php echo base_url()?>admindashboard/panel_data'">Panel Data</button>
-<button  id="cpjsbtn" onclick="window.location='<?php echo base_url()?>admindashboard/jobSeeker_data'">JobSeeker Data</button>
-<!--
- <a href= "<?php echo base_url()?>admindashboard/company_data"> Company Data</a>
- <a href="<?php echo base_url()?>admindashboard/panel_data">Panel Data </a> 
-<a href="<?php echo base_url()?>admindashboard/jobSeeker_data">JobSeeker Data</a>
--->
-
-<button  id="panalistbtn"type="submit" onclick="window.location='<?php echo base_url()?>admindashboard/assign'">Assign Panalist</button>
+<button  id="cpjsbtn" onclick="window.location='<?php echo base_url()?>Datatables/company_data'">Company Data</button>
+<button  id="cpjsbtn" onclick="window.location='<?php echo base_url()?>Datatables/panel_data'">Panel Data</button>
+<button  id="cpjsbtn" onclick="window.location='<?php echo base_url()?>Datatables/jobSeeker_data'">JobSeeker Data</button>
+ 
+<button  id="panalistbtn"type="submit" onclick="window.location='<?php echo base_url()?>Datatables/assign'">Assign Panalist</button>
 <br>
 <?php
 if($this->uri->segment(2)=="company_data" || $this->uri->segment(2)=="company_data_filter")
 {
     ?>
     <h3 id="mainhead" align="center">Company Data</h3><br />  
-              <form class="form-inline" action="<?php echo base_url() . 'admindashboard/company_data_filter'; ?>" method="post">
+              <form class="form-inline" action="<?php echo base_url() . 'Datatables/company_data_filter'; ?>" method="post">
                 <select class="form-control" name="field">
                   <option selected="selected" disabled="disabled" value="">Filter By</option>
                   <option <?php if (isset($_POST["field"]) && $_POST["field"]=="name_of_organization" && !empty($_POST['search'])) echo "selected"?> value="name_of_organization">name_of_organization</option>
@@ -292,7 +287,7 @@ if($this->uri->segment(2)=="company_data" || $this->uri->segment(2)=="company_da
 
                 <input class="form-control" type="text" id="search" name="search" value="<?php echo isset($_POST['search']) ? $_POST['search'] : '' ?>" placeholder="Search...">
                 <input class="btn btn-default" type="submit" name="filter" value="Go" id="goo">
-              </form>
+              </form>-->
 
 <br>
         <div class="breadcrumbs">
@@ -320,128 +315,6 @@ if($this->uri->segment(2)=="company_data" || $this->uri->segment(2)=="company_da
         <div class="content mt-3">
             <div class="animated fadeIn">
                 <div class="row">
-                    <!--<div class="col-lg-6">
-                        <div class="card">
-                            <div class="card-header">
-                                <strong class="card-title">Basic Table</strong>
-                            </div>
-                            <div class="card-body">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">First</th>
-                                            <th scope="col">Last</th>
-                                            <th scope="col">Handle</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>Larry</td>
-                                            <td>the Bird</td>
-                                            <td>@twitter</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <div class="card">
-                            <div class="card-header">
-                                <strong class="card-title">Table Dark</strong>
-                            </div>
-                            <div class="card-body">
-                                <table class="table table-dark">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">First</th>
-                                            <th scope="col">Last</th>
-                                            <th scope="col">Handle</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>Larry</td>
-                                            <td>the Bird</td>
-                                            <td>@twitter</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <div class="card">
-                            <div class="card-header">
-                                <strong class="card-title">Table Head</strong>
-                            </div>
-                            <div class="card-body">
-                                <table class="table">
-                                    <thead class="thead-dark">
-                                        <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">First</th>
-                                            <th scope="col">Last</th>
-                                            <th scope="col">Handle</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>Larry</td>
-                                            <td>the Bird</td>
-                                            <td>@twitter</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-                            </div>
-                        </div>
-                    </div>-->
-
-
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-header">
@@ -470,7 +343,7 @@ if($this->uri->segment(2)=="company_data" || $this->uri->segment(2)=="company_da
                                         </tr>
                                     </thead>              
                 
-      <?php              
+    <?php              
   if($data)  
            {  
              foreach ($data as $row) 
@@ -545,7 +418,7 @@ if($this->uri->segment(2)=="company_data" || $this->uri->segment(2)=="company_da
                                         </tr>
                                     </tbody>
 
-                                     <?php       
+         <?php       
                 }  
            }  
            else  
@@ -556,87 +429,13 @@ if($this->uri->segment(2)=="company_data" || $this->uri->segment(2)=="company_da
                 </tr>  
            <?php  
            }  
-           ?>  
-                                </table>
+           ?> 
+                             </table>
                             </div>
                         </div>
-                    <!--<div class="col-lg-6">
-                        <div class="card">
-                            <div class="card-header">
-                                <strong class="card-title">Bordered Table</strong>
-                            </div>
-                            <div class="card-body">
-                                <table class="table table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">First</th>
-                                            <th scope="col">Last</th>
-                                            <th scope="col">Handle</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td colspan="2">Larry the Bird</td>
-                                            <td>@twitter</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+                    
 
-                    <div class="col-lg-6">
-                        <div class="card">
-                            <div class="card-header">
-                                <strong class="card-title">Bordered Dark Table</strong>
-                            </div>
-                            <div class="card-body">
-                                <table class="table table-bordered table-dark">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">First</th>
-                                            <th scope="col">Last</th>
-                                            <th scope="col">Handle</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td colspan="2">Larry the Bird</td>
-                                            <td>@twitter</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>-->
+                   
 
                 </div>
             </div><!-- .animated -->
@@ -650,3 +449,4 @@ if($this->uri->segment(2)=="company_data" || $this->uri->segment(2)=="company_da
     <script src=  "<?php echo base_url(); ?>assets/js/main.js"></script>
 </body>
 </html>
+ 
