@@ -1,274 +1,7 @@
-<button  id="cpjsbtn" onclick="window.location='<?php echo base_url()?>admindashboard/company_data'">Company Data</button>
-<button  id="cpjsbtn" onclick="window.location='<?php echo base_url()?>admindashboard/panel_data'">Panel Data</button>
-<button  id="cpjsbtn" onclick="window.location='<?php echo base_url()?>admindashboard/jobSeeker_data'">JobSeeker Data</button>
-<!--
- <a href= "<?php echo base_url()?>admindashboard/company_data"> Company Data</a>
- <a href="<?php echo base_url()?>admindashboard/panel_data">Panel Data </a> 
-<a href="<?php echo base_url()?>admindashboard/jobSeeker_data">JobSeeker Data</a>
--->
 
-<button  id="panalistbtn"type="submit" onclick="window.location='<?php echo base_url()?>admindashboard/assign'">Assign Panalist</button>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
 
 <?php
-
-if($this->uri->segment(2)=="company_data" || $this->uri->segment(2)=="company_data_filter")
-{
-	?>
-	<h3 id="mainhead" align="center">Company Data</h3><br />  
-              <form class="form-inline" action="<?php echo base_url() . 'admindashboard/company_data_filter'; ?>" method="post">
-                <select class="form-control" name="field">
-                  <option selected="selected" disabled="disabled" value="">Filter By</option>
-                  <option <?php if (isset($_POST["field"]) && $_POST["field"]=="name_of_organization" && !empty($_POST['search'])) echo "selected"?> value="name_of_organization">name_of_organization</option>
-                </select>
-
-                <input class="form-control" type="text" id="search" name="search" value="<?php echo isset($_POST['search']) ? $_POST['search'] : '' ?>" placeholder="Search...">
-                <input class="btn btn-default" type="submit" name="filter" value="Go" id="goo">
-              </form>
-<br/><br/> 
-<div class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="card bootstrap-table">
-                                <div class="card-body table-full-width">
-              <div class="table-responsive">  
-              <table class="table table-striped   table-bordered">  
-               <thead>
-                <tr >  
-                     <th  >No#</th>  
-                     <th>Logo</th>  
-                     <th>Organization</th>  
-                     <th>Industry</th> 
-                     <th>Sector</th> 
-                     <th>Address</th>
-                     <th>Phone</th>
-                     <th>Mobile</th>  
-                     <th>Website</th>  
-                     <th>Facebook</th>  
-                     <th>CEO</th>  
-                     <th>skype</th>  
-                     <th>CEO Email</th>  
-                     <th>Focal Name</th>  
-                     <th>NTN</th>  
-                     <th>Employee ID</th>  
-
-                </tr> 
-                </thead> 
-           <?php  
-           if($data)  
-           {  
-             foreach ($data as $row) 
-                {  
-           ?>  <tbody>
-                <tr>  
-                     <td><?php echo "$row->company_no" ?></td> 
-                     <td><img src="<?php echo base_url().'uploads/'.$row->logoimage?>" width="50px"/></td> 
-                     <td><a href="<?php echo base_url() . "admindashboard/view_company_job/" . $row->company_no; ?>"><?php echo "$row->name_of_organization" ?></a></td>
-                     <td><?php echo "$row->industry_type" ?></td>
-                     <td><?php echo "$row->sector" ?></td>
-                     <td><?php echo "$row->address" ?></td>
-                     <td><?php echo "$row->phoneno"?></td>
-                     <td><?php echo "$row->mobileno"?></td>
-                     <td><?php echo "$row->website_link"?></td>
-                     <td><?php echo "$row->facebook"?></td>
-                     <td><?php echo "$row->ceo_name"?></td>
-                     <td><?php echo "$row->skype_id"?></td>
-                     <td><?php echo "$row->email_ceo"?></td>
-                     <td><?php echo "$row->focal_name"?></td>
-                     <td><?php echo "$row->ntn_no"?></td>
-                     <td><?php echo "$row->employee_no"?></td>
-                </tr> 
-                </tbody> 
-           <?php       
-                }  
-           }  
-           else  
-           {  
-           ?>  
-                <tr>  
-                     <td colspan="15">No Data Found</td>  
-                </tr>  
-           <?php  
-           }  
-           ?>  
-           </table>  
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-</div>
-</div>
-      <?php
-}
-else if ($this->uri->segment(2)=="panel_data" || $this->uri->segment(2)=="panel_data_filter")
-{
-	?>
-	<h3>Panel Data :</h3><br />  
-            <form class="form-inline" action="<?php echo base_url() . 'admindashboard/panel_data_filter'; ?>" method="post">
-                <select class="form-control" name="field">
-                  <option selected="selected" disabled="disabled" value="">Filter By</option>
-                  <option <?php if (isset($_POST["field"]) && $_POST["field"]=="first_name" && !empty($_POST['search'])) echo "selected"?> value="first_name"> first_name </option>
-                  <option <?php if (isset($_POST["field"]) && $_POST["field"]=="last_name" && !empty($_POST['search'])) echo "selected"?>value="last_name"> last_name </option>
-                  <option <?php if (isset($_POST["field"]) && $_POST["field"]=="pskill_name" && !empty($_POST['search'])) echo "selected"?>value="pskill_name">Skill Name </option>
-                </select>
-                <input class="form-control" type="text" id="search" name="search" value="<?php echo isset($_POST['search']) ? $_POST['search'] : '' ?>" placeholder="Search...">
-                <input class="btn btn-default" type="submit" name="filter" value="Go">
-              </form>
-
-              <div class="table-responsive">  
-              <table class="table  table-striped">  
-                <tr>  
-                     <th>Panelid</th>  
-                     <th>Profileimage</th>
-                     <th>First_name</th>  
-                     <th>Last_name</th> 
-                     <th>Mobileno</th> 
-                     <th>City</th>
-                     <th>Country</th>
-                     <th>Skype_id</th>  
-                     <th>Linkedin_profile</th> 
-                     <th>Panel Skills </th>              
-                     <th>Panel Experience </th> 
-                     <th>Panel Education </th> 
-                </tr>  
-           <?php  
-           if($data)  
-           {  
-            
-             foreach ($data as $row) 
-                {  
-           ?>  
-                <tr>  
-                     <td><?php echo "$row->panelid" ?></td> 
-                     <td><img src="<?php echo base_url().'uploads/'.$row->pimage?>" width="100"/></td> 
-                     <td><?php echo "$row->first_name" ?></td>
-                     <td><?php echo "$row->last_name" ?></td>
-                     <td><?php echo "$row->mobileno" ?></td>
-                     <td><?php echo "$row->city" ?></td>
-                     <td><?php echo "$row->country"?></td>
-                     <td><?php echo "$row->skype_id"?></td>
-                     <td><?php echo "$row->linkdin_profile"?></td>
-                     <td><?php echo "$row->skills"?></td>
-                     <td><?php echo "$row->exp"?></td>
-                     <td><?php echo "$row->edu"?></td>
-
-                </tr>  
-           <?php       
-                }  
-           }  
-           else  
-           {  
-           ?>  
-                <tr>  
-                     <td colspan="15">No Data Found</td>  
-                </tr>  
-           <?php  
-           }  
-           ?>  
-           </table>  
-      </div>
-      <?php
-}
-else if($this->uri->segment(2)=="jobSeeker_data"|| $this->uri->segment(2)=="fiter_jobseeker_data")
-{
-?>
-	<h3>Jobseeker Data :</h3><br />  
-             <form class="form-inline" action="<?php echo base_url() . 'admindashboard/fiter_jobseeker_data'; ?>" method="post">
-                <select class="form-control" name="field">
-                  <option selected="selected" disabled="disabled" value="">Filter By</option>
-                  <option <?php if (isset($_POST["field"]) && $_POST["field"]=="first_name" && !empty($_POST['search'])) echo "selected"?>  value="first_name"> first_name</option>
-                  <option <?php if (isset($_POST["field"]) && $_POST["field"]=="last_name" && !empty($_POST['search'])) echo "selected"?> value="last_name"> last_name </option>
-                  <option  <?php if (isset($_POST["field"]) && $_POST["field"]=="approval" && !empty($_POST['search'])) echo "selected"?>value="approval">Approval </option>
-                  <option <?php if (isset($_POST["field"]) && $_POST["field"]=="hiring" && !empty($_POST['search'])) echo "selected"?>value="hiring"> Hiring </option>
-                  <option <?php if (isset($_POST["field"]) && $_POST["field"]=="city" && !empty($_POST['search'])) echo "selected"?>value="city"> City </option>
-                  <option <?php if (isset($_POST["field"]) && $_POST["field"]=="skill_name" && !empty($_POST['search'])) echo "selected"?>value="skill_name"> Skill Name</option>
-                </select>
-                <input class="form-control" type="text" id="search" id="search" name="search" value="<?php echo isset($_POST['search']) ? $_POST['search'] : '' ?>" placeholder="Search...">
-                <input class="btn btn-default" type="submit" name="filter" value="Go">
-              </form>
-
-              <div class="table-responsive">  
-              <table class="table table-striped">  
-                <tr>  
-                     <th>CNIC</th>  
-                     <th>Profile Image</th>  
-                     <th>First_name</th>  
-                     <th>Last_name</th> 
-                     <th>Father_name</th> 
-                     <th>DOB</th>
-                     <th>Nationality</th>
-                     <th>Mobileno</th>  
-                     <th>Address</th>  
-                     <th>City</th>  
-                     <th>Country</th>  
-                     <th>Skype_id</th>  
-                     <th>Linkedin_Profile</th>  
-                     <th>skills</th>  
-                     <th>Experience</th>
-                     <th>Education</th>
-
-                     
-                </tr>  
-           <?php  
-           if($data)  
-           {  
-             foreach ($data as $row) 
-                {  
-           ?>  
-                <tr>  
-                     <td><?php echo "$row->cnic" ?></td> 
-                     <td><img src="<?php echo base_url().'uploads/'.$row->pimage?>" width="100"/></td> 
-                     <td><?php echo "$row->first_name?"?></td>
-                     <td><?php echo "$row->last_name" ?></td>
-                     <td><?php echo "$row->father_name" ?></td>
-                     <td><?php echo "$row->date_of_birth" ?></td>
-                     <td><?php echo "$row->nationality" ?></td>
-                     <td><?php echo "$row->mobileno"?></td>
-                     <td><?php echo "$row->address"?></td>
-                     <td><?php echo "$row->city"?></td>
-                     <td><?php echo "$row->country"?></td>
-                     <td><?php echo "$row->skype_id"?></td>
-                     <td><?php echo "$row->linkdin_profile"?></td>
-                     <td><?php echo "$row->skills"?></td>
-                     <td><?php echo "$row->exp"?></td>
-                     <td><?php echo "$row->edu"?></td>
-           <?php       
-                }  
-           }  
-           else  
-           {  
-           ?>  
-                <tr>  
-                     <td colspan="15">No Data Found</td>  
-                </tr>  
-           <?php  
-           }  
-           ?>  
-           </table>  
-      </div>
-<?php
-}
-else 
-{
-	?>
-	<div class="table-responsive">  
-              <table class="table table-bordered">  
-                <tr>  Nothing is to  be shown </tr>
-           </table>
-       </div>
-       <?php
-}
-?>
-
-
- <?php
  defined('BASEPATH') OR exit('No direct script access allowed');?>
   <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
@@ -277,7 +10,7 @@ else
 <!--[if gt IE 8]><!-->
 <html class="no-js" lang="en">
 <!--<![endif]-->
-
+ 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -285,8 +18,8 @@ else
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" href="apple-icon.png">
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="<?php echo base_url(); ?>assets/apple-icon.png">
+    <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/favicon.ico">
  
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendors/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendors/font-awesome/css/font-awesome.min.css"/>
@@ -302,12 +35,7 @@ else
 
 </head>
 
-<body>
-
-
-    <!-- Left Panel -->
-
-    <aside id="left-panel" class="left-panel">
+ <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default">
 
             <div class="navbar-header">
@@ -345,14 +73,16 @@ else
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
                         <ul class="sub-menu children dropdown-menu">
  
                             <li><i class="fa fa-table"></i>
-                              <a href="<?php echo base_url("Datatables");?>"> Basic Table</a></li>
+                               
+                            <a href="<?php echo base_url()?>Datatables/company_data">Company Data</a>
+                            <li><i class="fa fa-table"></i><a href="<?php echo base_url()?>Paneldatatable/panel_data">Panel Data</a></li>
+                             <li><i class="fa fa-table"></i><a href="<?php echo base_url()?>Jobseekerdatatable/jobSeeker_data">Jobseeker Data</a></li>
+                              <li><i class="fa fa-table"></i><a href="<?php echo base_url()?>admindashboard/assign">Assign Panelist</a></li>
 
-
-                            <li><i class="fa fa-table"></i><a href="<?php echo base_url(); ?>assets/tables-data.html">Data Table</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
@@ -569,6 +299,15 @@ else
             </div>
 
 
+        
+
+<body>
+
+
+    <!-- Left Panel -->
+
+   
+
             <div class="col-sm-6 col-lg-3">
                 <div class="card text-white bg-flat-color-1">
                     <div class="card-body pb-0">
@@ -691,9 +430,13 @@ else
                     <i class="fa fa-facebook"></i>
                     <ul>
                         <li>
-                            <span class="count">40</span> k
+                            <!--<span class="count">40</span> k-->
+                           
+
                             <span>friends</span>
                         </li>
+
+ 
                         <li>
                             <span class="count">450</span>
                             <span>feeds</span>
@@ -710,9 +453,86 @@ else
                     <i class="fa fa-twitter"></i>
                     <ul>
                         <li>
-                            <span class="count">30</span> k
+                            <!--<span class="count">30</span> k-->
+                          
+           
                             <span>friends</span>
                         </li>
+                        <?php
+
+function getTwitterFollowers($screenName = 'womentechouse')
+{
+    // some variables
+    $consumerKey = 'YIQPxqfqQto5yaskourlA';
+    $consumerSecret = 'OH3xiYM4oN3mjGK3as9m37zkKeyiHgKhBIgiNhoM';
+    $token = get_option('cfTwitterToken');
+ 
+    // get follower count from cache
+    $numberOfFollowers = get_transient('cfTwitterFollowers');
+ 
+    // cache version does not exist or expired
+    if (false === $numberOfFollowers) {
+        // getting new auth bearer only if we don't have one
+        if(!$token) {
+            // preparing credentials
+            $credentials = $consumerKey . ':' . $consumerSecret;
+            $toSend = base64_encode($credentials);
+ 
+            // http post arguments
+            $args = array(
+                'method' => 'POST',
+                'httpversion' => '1.1',
+                'blocking' => true,
+                'headers' => array(
+                    'Authorization' => 'Basic ' . $toSend,
+                    'Content-Type' => 'application/x-www-form-urlencoded;charset=UTF-8'
+                ),
+                'body' => array( 'grant_type' => 'client_credentials' )
+            );
+ 
+            add_filter('https_ssl_verify', '__return_false');
+            $response = wp_remote_post('https://api.twitter.com/oauth2/token', $args);
+ 
+            $keys = json_decode(wp_remote_retrieve_body($response));
+ 
+            if($keys) {
+                // saving token to wp_options table
+                update_option('cfTwitterToken', $keys->access_token);
+                $token = $keys->access_token;
+            }
+        }
+        // we have bearer token wether we obtained it from API or from options
+        $args = array(
+            'httpversion' => '1.1',
+            'blocking' => true,
+            'headers' => array(
+                'Authorization' => "Bearer $token"
+            )
+        );
+ 
+        add_filter('https_ssl_verify', '__return_false');
+        $api_url = "https://api.twitter.com/1.1/users/show.json?screen_name=$screenName";
+        $response = wp_remote_get($api_url, $args);
+ 
+        if (!is_wp_error($response)) {
+            $followers = json_decode(wp_remote_retrieve_body($response));
+            $numberOfFollowers = $followers->followers_count;
+        } else {
+            // get old value and break
+            $numberOfFollowers = get_option('cfNumberOfFollowers');
+            // uncomment below to debug
+            //die($response->get_error_message());
+        }
+ 
+        // cache for an hour
+        set_transient('cfTwitterFollowers', $numberOfFollowers, 1*60*60);
+        update_option('cfNumberOfFollowers', $numberOfFollowers);
+    }
+ 
+    return $numberOfFollowers;
+}
+
+?>
                         <li>
                             <span class="count">450</span>
                             <span>tweets</span>
@@ -948,6 +768,10 @@ else
     </div><!-- /#right-panel -->
 
     <!-- Right Panel -->
+
+
+
+
     <script src="<?php echo base_url(); ?>assets/vendors/jquery/dist/jquery.min.js"> </script>
     <script src="<?php echo base_url(); ?>assets/vendors/popper.js/dist/umd/popper.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -982,3 +806,7 @@ else
 </body>
 
 </html>
+
+
+  
+
