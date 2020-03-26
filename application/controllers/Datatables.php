@@ -32,8 +32,7 @@ class Datatables extends CI_Controller {
   }
 
   function index()
-  {
-    
+  {    
     $this->load->view('templates/dashboardhead');
 		$this->load->view('templates/dashboardleft');
     $this->load->view('templates/dashboardright');
@@ -41,16 +40,16 @@ class Datatables extends CI_Controller {
     $this->load->view('templates/dashboardfooter');
 
     /*$this->load->view('templates/footer');*/
-    }
+  }
 
     function tablesbasic($result)
     {
+
       $this->load->view('templates/dashboardhead');
 		  $this->load->view('templates/dashboardleft');
 		  $this->load->view('templates/dashboardright');
       $this->load->view('tablesbasic',$result);
       $this->load->view('templates/dashboardfooter');
-   // $this->load->view('templates/footer');
     }
     
     function loadIndex()
