@@ -78,7 +78,7 @@ class Login extends CI_Controller {
     }
 
     public function logout(){
-      destroy_session();
+      
             $this->session->sess_destroy();
             redirect();
         }// viewer logout.
