@@ -33,20 +33,28 @@ class Datatables extends CI_Controller {
 
   function index()
   {
-    $this->load->view('templates/dashboardheader');
+    
+    $this->load->view('templates/dashboardhead');
+		$this->load->view('templates/dashboardleft');
+    $this->load->view('templates/dashboardright');
     $this->load->view('tablesbasic');
+    $this->load->view('templates/dashboardfooter');
+
     /*$this->load->view('templates/footer');*/
     }
 
     function tablesbasic($result)
     {
-      $this->load->view('templates/dashboardheader');
-    $this->load->view('tablesbasic',$result);
+      $this->load->view('templates/dashboardhead');
+		  $this->load->view('templates/dashboardleft');
+		  $this->load->view('templates/dashboardright');
+      $this->load->view('tablesbasic',$result);
+      $this->load->view('templates/dashboardfooter');
    // $this->load->view('templates/footer');
     }
     
     function loadIndex()
-  {
+    {
         $this->load->view('index');
     }
 
@@ -67,10 +75,12 @@ class Datatables extends CI_Controller {
     function view_company_job()
     {
       $cid = $this->uri->segment(3);
-    $result['data']=$this->admindashboard_model->retreive_company_jobs($cid);
-    $this->load->view('templates/header');
+      $result['data']=$this->admindashboard_model->retreive_company_jobs($cid);
+      $this->load->view('templates/dashboardhead');
+		  $this->load->view('templates/dashboardleft');
+		  $this->load->view('templates/dashboardright');
       $this->load->view('company_job',$result);
-      $this->load->view('templates/footer');
+      $this->load->view('templates/dashboardfooter');
     }
 
     function company_job_filter()
@@ -78,9 +88,11 @@ class Datatables extends CI_Controller {
       $search_value=$this->input->post('search');
       $field_name=$this->input->post('field');
       $result['data']=$this->admindashboard_model->company_job_filter($search_value,$field_name);
-      $this->load->view('templates/header');
+      $this->load->view('templates/dashboardhead');
+		  $this->load->view('templates/dashboardleft');
+		  $this->load->view('templates/dashboardright');
       $this->load->view('company_job',$result);
-      $this->load->view('templates/footer');
+      $this->load->view('templates/dashboardfooter');
 
     }
 

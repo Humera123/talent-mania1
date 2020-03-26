@@ -54,10 +54,14 @@ class Index extends CI_Controller {
  }
 
  function admindashboard(){
+   $this->load->view('templates/dashboardhead');
+	$this->load->view('templates/dashboardleft');
+	$this->load->view('templates/dashboardright');
    $result['jobseekers_count']=$this->admindashboard_model->totaljob_assigned();
 	$result['company_count']=$this->admindashboard_model->totalcompanies();
 	$result['panalist_count']=$this->admindashboard_model->totalpanalist();
     $this->load->view('admin',$result);
+    $this->load->view('templates/dashboardfooter');
  }
 
 }
