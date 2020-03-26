@@ -10,14 +10,14 @@ class Index extends CI_Controller {
   $this->load->library('form_validation');
   //$this->load->library('encrypt');
   $this->load->model('index_model');
+  $this->load->model('admindashboard_model');
  }
 
  function index()
  {
     
-   
-
     $type = $this->loadFile();
+    //$this->index_model->viewerscount_insert($this->session->userdata('id'),$type);
     if($type == 1){
         $this->jobseekerdashboard();   
     }
@@ -54,7 +54,10 @@ class Index extends CI_Controller {
  }
 
  function admindashboard(){
-    $this->load->view('admin');
+   $result['jobseekers_count']=$this->admindashboard_model->totaljob_assigned();
+	$result['company_count']=$this->admindashboard_model->totalcompanies();
+	$result['panalist_count']=$this->admindashboard_model->totalpanalist();
+    $this->load->view('admin',$result);
  }
 
 }

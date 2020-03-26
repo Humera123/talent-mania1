@@ -44,6 +44,8 @@ class Admindashboard extends CI_Controller {
     {
 		//$this->load->view('templates/dashboardheader');
 		$result['jobseekers_count']=$this->admindashboard_model->totaljob_assigned();
+		$result['company_count']=$this->admindashboard_model->totalcompanies();
+		$result['panalist_count']=$this->admindashboard_model->totalpanalist();
 		$this->load->view('admin',$result);
 		$this->load->view('templates/footer');
     }

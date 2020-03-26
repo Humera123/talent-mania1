@@ -1,9 +1,6 @@
-
-
-
 <?php
- defined('BASEPATH') OR exit('No direct script access allowed');?>
-  <!doctype html>
+defined('BASEPATH') OR exit('No direct script access allowed');?>
+<!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
@@ -714,8 +711,8 @@ function getTwitterFollowers($screenName = 'womentechouse')
                         <div class="stat-widget-one">
                             <div class="stat-icon dib"><i class="ti-money text-success border-success"></i></div>
                             <div class="stat-content dib">
-                                <div class="stat-text">Total Profit</div>
-                                <div class="stat-digit">1,012</div>
+                                <div class="stat-text">Companies Count</div>
+                                <div class="stat-digit"><?php echo $company_count ?></div>
                             </div>
                         </div>
                     </div>
@@ -729,8 +726,8 @@ function getTwitterFollowers($screenName = 'womentechouse')
                         <div class="stat-widget-one">
                             <div class="stat-icon dib"><i class="ti-user text-primary border-primary"></i></div>
                             <div class="stat-content dib">
-                                <div class="stat-text">New Customer</div>
-                                <div class="stat-digit">961</div>
+                                <div class="stat-text">Job Assigned</div>
+                                <div class="stat-digit"><?php echo $jobseekers_count ?></div>
                             </div>
                         </div>
                     </div>
@@ -743,8 +740,8 @@ function getTwitterFollowers($screenName = 'womentechouse')
                         <div class="stat-widget-one">
                             <div class="stat-icon dib"><i class="ti-layout-grid2 text-warning border-warning"></i></div>
                             <div class="stat-content dib">
-                                <div class="stat-text">Active Projects</div>
-                                <div class="stat-digit">770</div>
+                                <div class="stat-text">Panalist Count</div>
+                                <div class="stat-digit"><?php echo $panalist_count ?></div>
                             </div>
                         </div>
                     </div>
