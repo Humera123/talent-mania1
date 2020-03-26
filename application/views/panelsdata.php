@@ -316,7 +316,7 @@
 {
     ?>
     <h3 id="mainhead"  >Panel Data</h3><br />  <br/>
-            <form class="form-inline" action="<?php echo base_url() . 'admindashboard/panel_data_filter'; ?>" method="post">
+            <form class="form-inline" action="<?php echo base_url() . 'Paneldatatable/panel_data_filter'; ?>" method="post">
                 <div id="searchfilterandgocontrols">
                 <select class="form-control" name="field" id="filtered">
                   <option selected="selected" disabled="disabled" value="">Filter By</option>

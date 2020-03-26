@@ -314,17 +314,17 @@ if($this->uri->segment(2)=="jobSeeker_data"|| $this->uri->segment(2)=="fiter_job
 {
 ?>
     <h3 id="mainhead">Jobseeker Data </h3><br />  
-             <form class="form-inline" action="<?php echo base_url() . 'admindashboard/fiter_jobseeker_data'; ?>" method="post">
+             <form class="form-inline" action="<?php echo base_url() . 'Jobseekerdatatable/fiter_jobseeker_data'; ?>" method="post">
 
 <div id= "searchfilterandgocontrols">
                 <select class="form-control" name="field" id="filtered">
                   <option selected="selected" disabled="disabled" value="">Filter By</option>
-                  <option <?php if (isset($_POST["field"]) && $_POST["field"]=="first_name" && !empty($_POST['search'])) echo "selected"?>  value="first_name"> first_name</option>
-                  <option <?php if (isset($_POST["field"]) && $_POST["field"]=="last_name" && !empty($_POST['search'])) echo "selected"?> value="last_name"> last_name </option>
+                  <option <?php if (isset($_POST["field"]) && $_POST["field"]=="first_name" && !empty($_POST['search'])) echo "selected"?>  value="first_name"> First Name</option>
+                  <option <?php if (isset($_POST["field"]) && $_POST["field"]=="last_name" && !empty($_POST['search'])) echo "selected"?> value="last_name"> Last Name </option>
                   <option  <?php if (isset($_POST["field"]) && $_POST["field"]=="approval" && !empty($_POST['search'])) echo "selected"?>value="approval">Approval </option>
                   <option <?php if (isset($_POST["field"]) && $_POST["field"]=="hiring" && !empty($_POST['search'])) echo "selected"?>value="hiring"> Hiring </option>
                   <option <?php if (isset($_POST["field"]) && $_POST["field"]=="city" && !empty($_POST['search'])) echo "selected"?>value="city"> City </option>
-                  <option <?php if (isset($_POST["field"]) && $_POST["field"]=="skill_name" && !empty($_POST['search'])) echo "selected"?>value="skill_name"> Skill Name</option>
+                  <option <?php if (isset($_POST["field"]) && $_POST["field"]=="skill_name" && !empty($_POST['search'])) echo "selected"?>value="skill_name"> Skill</option>
                 </select>
                 <input class="form-control" type="text" id="search" id="search" name="search" value="<?php echo isset($_POST['search']) ? $_POST['search'] : '' ?>" placeholder="Search...">
             </div>

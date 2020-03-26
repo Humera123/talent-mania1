@@ -317,11 +317,11 @@ if($this->uri->segment(2)=="company_data" || $this->uri->segment(2)=="company_da
 {
     ?>
     <h3 id="mainhead">Company Data</h3><br />  <br/>
-              <form class="form-inline" action="<?php echo base_url() . 'admindashboard/company_data_filter'; ?>" method="post">
+              <form class="form-inline" action="<?php echo base_url() . 'Datatables/company_data_filter'; ?>" method="post">
                 <div id= "searchfilterandgocontrols">
                 <select class="form-control" name="field" id="filtered">
                   <option selected="selected" disabled="disabled"  value="">Filter By</option>
-                  <option <?php if (isset($_POST["field"]) && $_POST["field"]=="name_of_organization" && !empty($_POST['search'])) echo "selected"?> value="name_of_organization">name_of_organization</option>
+                  <option <?php if (isset($_POST["field"]) && $_POST["field"]=="name_of_organization" && !empty($_POST['search'])) echo "selected"?> value="name_of_organization">Name of Organization</option>
                 </select>
 
                 <input class="form-control" type="text" id="search" name="search" value="<?php echo isset($_POST['search']) ? $_POST['search'] : '' ?>" placeholder="Search...">
