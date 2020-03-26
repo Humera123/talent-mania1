@@ -33,14 +33,14 @@ class Datatables extends CI_Controller {
 
   function index()
   {
-    $this->load->view('templates/dashboardheader');
+    //$this->load->view('templates/dashboardheader');
     $this->load->view('tablesbasic');
     /*$this->load->view('templates/footer');*/
     }
 
     function tablesbasic($result)
     {
-      $this->load->view('templates/dashboardheader');
+     // $this->load->view('templates/dashboardheader');
     $this->load->view('tablesbasic',$result);
    // $this->load->view('templates/footer');
     }
