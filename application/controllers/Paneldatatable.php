@@ -23,30 +23,30 @@ class Paneldatatable extends CI_Controller {
   public function __construct()
   {
     parent::__construct();
-    // if(!$this->session->userdata('id'))
-    // {
-    //  redirect('index');
-   //  }
     $this->load->library('encryptioncustom');
     $this->load->model('admindashboard_model');
   }
 
   function index()
   {
-    //$this->load->view('templates/dashboardheader');
+    $this->load->view('templates/dashboardhead');
+		$this->load->view('templates/dashboardleft');
+		$this->load->view('templates/dashboardright');
     $this->load->view('panelsdata');
-    /*$this->load->view('templates/footer');*/
+    $this->load->view('templates/dashboardfooter');
     }
 
     function panelsdata($result)
     {
-      //$this->load->view('templates/header');
-    $this->load->view('panelsdata',$result);
-   // $this->load->view('templates/footer');
+      $this->load->view('templates/dashboardhead');
+		  $this->load->view('templates/dashboardleft');
+		  $this->load->view('templates/dashboardright');
+      $this->load->view('panelsdata',$result);
+      $this->load->view('templates/dashboardfooter');
     }
     
     function loadIndex()
-  {
+    {
         $this->load->view('index');
     }
 

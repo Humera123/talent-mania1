@@ -33,16 +33,20 @@ class Jobseekerdatatable extends CI_Controller {
 
   function index()
   {
-    //$this->load->view('templates/dashboardheader');
+    $this->load->view('templates/dashboardhead');
+    $this->load->view('templates/dashboardleft');
+    $this->load->view('templates/dashboardright');
     $this->load->view('jobseekerdata');
-    /*$this->load->view('templates/footer');*/
+    $this->load->view('templates/dashboardfooter');
     }
 
     function jobseekerdata($result)
     {
-      //$this->load->view('templates/header');
-    $this->load->view('jobseekerdata',$result);
-   // $this->load->view('templates/footer');
+      $this->load->view('templates/dashboardhead');
+		  $this->load->view('templates/dashboardleft');
+		  $this->load->view('templates/dashboardright');
+      $this->load->view('jobseekerdata',$result);
+      $this->load->view('templates/dashboardfooter');
     }
     
     function loadIndex()

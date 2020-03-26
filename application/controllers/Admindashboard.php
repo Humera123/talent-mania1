@@ -32,22 +32,28 @@ class Admindashboard extends CI_Controller {
 
 	function index()
 	{
-          //$this->load->view('templates/dashboardheader');
-		
+        $this->load->view('templates/dashboardhead');
+		$this->load->view('templates/dashboardleft');
+		$this->load->view('templates/dashboardright');
 		$result['jobseekers_count']=$this->admindashboard_model->totaljob_assigned();
+		$result['company_count']=$this->admindashboard_model->totalcompanies();
+		$result['panalist_count']=$this->admindashboard_model->totalpanalist();
 		$this->load->view('admin',$result);
+		$this->load->view('templates/dashboardfooter');
 		
       
     }
 
     function admin($result)
     {
-		//$this->load->view('templates/dashboardheader');
+		$this->load->view('templates/dashboardhead');
+		$this->load->view('templates/dashboardleft');
+		$this->load->view('templates/dashboardright');
 		$result['jobseekers_count']=$this->admindashboard_model->totaljob_assigned();
 		$result['company_count']=$this->admindashboard_model->totalcompanies();
 		$result['panalist_count']=$this->admindashboard_model->totalpanalist();
 		$this->load->view('admin',$result);
-		$this->load->view('templates/footer');
+		$this->load->view('templates/dashboardfooter');
     }
     
     function loadIndex()
@@ -128,9 +134,15 @@ class Admindashboard extends CI_Controller {
 
     function assign()
     {
-	  $result['data']=$this->admindashboard_model->assign_panelist();
-	  $result['jobseekers_count']=$this->admindashboard_model->totaljob_assigned(); 
-      $this->load->view('admin',$this->session->set_flashdata('true', 'Successfully Panelist Alot'));     
+	  $this->load->view('templates/dashboardhead');
+	  $this->load->view('templates/dashboardleft');
+	  $this->load->view('templates/dashboardright');
+	  $result['jobseekers_count']=$this->admindashboard_model->totaljob_assigned();
+	  $result['company_count']=$this->admindashboard_model->totalcompanies();
+	  $result['panalist_count']=$this->admindashboard_model->totalpanalist();
+	  $result['data']=$this->admindashboard_model->assign_panelist(); 
+	  $this->load->view('admin',$result);     
+	  $this->load->view('templates/dashboardfooter');
     }
 
 	function logout()
