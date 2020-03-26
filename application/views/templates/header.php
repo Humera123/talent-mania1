@@ -159,9 +159,6 @@
      
      <!--<script src ='<?php base_url();?> http://localhost/talentmania.com/welcome.php'>
       document.getElementById('navbarSupportedContent').style.display = 'none';-->
-  
- 
 
     </header>
-
-        
+    

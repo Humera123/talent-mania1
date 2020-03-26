@@ -2,7 +2,7 @@
      <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Datatables extends CI_Controller {
+class Paneldatatable extends CI_Controller {
 
   /**
    * Index Page for this controller.
@@ -33,15 +33,15 @@ class Datatables extends CI_Controller {
 
   function index()
   {
-    $this->load->view('templates/dashboardheader');
-    $this->load->view('tablesbasic');
+    //$this->load->view('templates/dashboardheader');
+    $this->load->view('panelsdata');
     /*$this->load->view('templates/footer');*/
     }
 
-    function tablesbasic($result)
+    function panelsdata($result)
     {
-      $this->load->view('templates/dashboardheader');
-    $this->load->view('tablesbasic',$result);
+      //$this->load->view('templates/header');
+    $this->load->view('panelsdata',$result);
    // $this->load->view('templates/footer');
     }
     
@@ -50,39 +50,23 @@ class Datatables extends CI_Controller {
         $this->load->view('index');
     }
 
-    function company_data()
+        function panel_data()
     {
-      $result['data']=$this->admindashboard_model->company_retrieve_info();
-      $this->tablesbasic($result); 
+      $result['data']=$this->admindashboard_model->panel_retrieve_info();
+      $this->panelsdata($result); 
     }
 
-    function company_data_filter()
+   
+
+    function panel_data_filter()
     {
-      $search_value=$this->input->post('search');
+    $search_value=$this->input->post('search');
       $field_name=$this->input->post('field');
-      $result['data']=$this->admindashboard_model->company_data_filter($search_value,$field_name);
-      $this->tablesbasic($result); 
+      $result['data']=$this->admindashboard_model->panel_data_filter($search_value,$field_name);
+      $this->panelsdata($result);        
     }
 
-    function view_company_job()
-    {
-      $cid = $this->uri->segment(3);
-    $result['data']=$this->admindashboard_model->retreive_company_jobs($cid);
-    $this->load->view('templates/header');
-      $this->load->view('company_job',$result);
-      $this->load->view('templates/footer');
-    }
-
-    function company_job_filter()
-    {
-      $search_value=$this->input->post('search');
-      $field_name=$this->input->post('field');
-      $result['data']=$this->admindashboard_model->company_job_filter($search_value,$field_name);
-      $this->load->view('templates/header');
-      $this->load->view('company_job',$result);
-      $this->load->view('templates/footer');
-
-    }
+ 
 
     function assign()
     {

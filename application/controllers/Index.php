@@ -17,7 +17,7 @@ class Index extends CI_Controller {
  {
     
     $type = $this->loadFile();
-    $this->index_model->viewerscount_insert($this->session->userdata('id'),$type);
+    //$this->index_model->viewerscount_insert($this->session->userdata('id'),$type);
     if($type == 1){
         $this->jobseekerdashboard();   
     }

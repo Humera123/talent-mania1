@@ -1,13 +1,13 @@
- <?php
- defined('BASEPATH') OR exit('No direct script access allowed');?>
-  <!doctype html>
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');?>
+<!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html class="no-js" lang="en">
 <!--<![endif]-->
-
+ 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,8 +15,8 @@
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" href="apple-icon.png">
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="<?php echo base_url(); ?>assets/apple-icon.png">
+    <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/favicon.ico">
  
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendors/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendors/font-awesome/css/font-awesome.min.css"/>
@@ -32,12 +32,7 @@
 
 </head>
 
-<body>
-
-
-    <!-- Left Panel -->
-
-    <aside id="left-panel" class="left-panel">
+ <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default">
 
             <div class="navbar-header">
@@ -75,14 +70,16 @@
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
                         <ul class="sub-menu children dropdown-menu">
  
                             <li><i class="fa fa-table"></i>
-                              <a href="<?php echo base_url("Datatables");?>"> Basic Table</a></li>
+                               
+                            <a href="<?php echo base_url()?>Datatables/company_data">Company Data</a>
+                            <li><i class="fa fa-table"></i><a href="<?php echo base_url()?>Paneldatatable/panel_data">Panel Data</a></li>
+                             <li><i class="fa fa-table"></i><a href="<?php echo base_url()?>Jobseekerdatatable/jobSeeker_data">Jobseeker Data</a></li>
+                              <li><i class="fa fa-table"></i><a href="<?php echo base_url()?>admindashboard/assign">Assign Panelist</a></li>
 
-
-                            <li><i class="fa fa-table"></i><a href="<?php echo base_url(); ?>assets/tables-data.html">Data Table</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
@@ -299,6 +296,15 @@
             </div>
 
 
+        
+
+<body>
+
+
+    <!-- Left Panel -->
+
+   
+
             <div class="col-sm-6 col-lg-3">
                 <div class="card text-white bg-flat-color-1">
                     <div class="card-body pb-0">
@@ -421,9 +427,13 @@
                     <i class="fa fa-facebook"></i>
                     <ul>
                         <li>
-                            <span class="count">40</span> k
+                            <!--<span class="count">40</span> k-->
+                           
+
                             <span>friends</span>
                         </li>
+
+ 
                         <li>
                             <span class="count">450</span>
                             <span>feeds</span>
@@ -440,9 +450,86 @@
                     <i class="fa fa-twitter"></i>
                     <ul>
                         <li>
-                            <span class="count">30</span> k
+                            <!--<span class="count">30</span> k-->
+                          
+           
                             <span>friends</span>
                         </li>
+                        <?php
+
+function getTwitterFollowers($screenName = 'womentechouse')
+{
+    // some variables
+    $consumerKey = 'YIQPxqfqQto5yaskourlA';
+    $consumerSecret = 'OH3xiYM4oN3mjGK3as9m37zkKeyiHgKhBIgiNhoM';
+    $token = get_option('cfTwitterToken');
+ 
+    // get follower count from cache
+    $numberOfFollowers = get_transient('cfTwitterFollowers');
+ 
+    // cache version does not exist or expired
+    if (false === $numberOfFollowers) {
+        // getting new auth bearer only if we don't have one
+        if(!$token) {
+            // preparing credentials
+            $credentials = $consumerKey . ':' . $consumerSecret;
+            $toSend = base64_encode($credentials);
+ 
+            // http post arguments
+            $args = array(
+                'method' => 'POST',
+                'httpversion' => '1.1',
+                'blocking' => true,
+                'headers' => array(
+                    'Authorization' => 'Basic ' . $toSend,
+                    'Content-Type' => 'application/x-www-form-urlencoded;charset=UTF-8'
+                ),
+                'body' => array( 'grant_type' => 'client_credentials' )
+            );
+ 
+            add_filter('https_ssl_verify', '__return_false');
+            $response = wp_remote_post('https://api.twitter.com/oauth2/token', $args);
+ 
+            $keys = json_decode(wp_remote_retrieve_body($response));
+ 
+            if($keys) {
+                // saving token to wp_options table
+                update_option('cfTwitterToken', $keys->access_token);
+                $token = $keys->access_token;
+            }
+        }
+        // we have bearer token wether we obtained it from API or from options
+        $args = array(
+            'httpversion' => '1.1',
+            'blocking' => true,
+            'headers' => array(
+                'Authorization' => "Bearer $token"
+            )
+        );
+ 
+        add_filter('https_ssl_verify', '__return_false');
+        $api_url = "https://api.twitter.com/1.1/users/show.json?screen_name=$screenName";
+        $response = wp_remote_get($api_url, $args);
+ 
+        if (!is_wp_error($response)) {
+            $followers = json_decode(wp_remote_retrieve_body($response));
+            $numberOfFollowers = $followers->followers_count;
+        } else {
+            // get old value and break
+            $numberOfFollowers = get_option('cfNumberOfFollowers');
+            // uncomment below to debug
+            //die($response->get_error_message());
+        }
+ 
+        // cache for an hour
+        set_transient('cfTwitterFollowers', $numberOfFollowers, 1*60*60);
+        update_option('cfNumberOfFollowers', $numberOfFollowers);
+    }
+ 
+    return $numberOfFollowers;
+}
+
+?>
                         <li>
                             <span class="count">450</span>
                             <span>tweets</span>
@@ -678,6 +765,10 @@
     </div><!-- /#right-panel -->
 
     <!-- Right Panel -->
+
+
+
+
     <script src="<?php echo base_url(); ?>assets/vendors/jquery/dist/jquery.min.js"> </script>
     <script src="<?php echo base_url(); ?>assets/vendors/popper.js/dist/umd/popper.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -712,3 +803,7 @@
 </body>
 
 </html>
+
+
+  
+
