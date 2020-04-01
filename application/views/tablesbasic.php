@@ -14,18 +14,18 @@
 if($this->uri->segment(2)=="company_data" || $this->uri->segment(2)=="company_data_filter")
 {
     ?>
-    <h3 id="mainhead">Company Data</h3><br />  <br/>
+    <h3 id="mainhead">Company Data</h3><br />  
               <form class="form-inline" action="<?php echo base_url() . 'Datatables/company_data_filter'; ?>" method="post">
-                <div id= "searchfilterandgocontrols">
+                 
                 <select class="form-control" name="field" id="filtered">
                   <option selected="selected" disabled="disabled"  value="">Filter By</option>
                   <option <?php if (isset($_POST["field"]) && $_POST["field"]=="name_of_organization" && !empty($_POST['search'])) echo "selected"?> value="name_of_organization">Name of Organization</option>
                 </select>
-
+                 <br/>
                 <input class="form-control" type="text" id="search" name="search" value="<?php echo isset($_POST['search']) ? $_POST['search'] : '' ?>" placeholder="Search...">
-                 </div>
+                 
                 <input class="btn btn-default" type="submit" name="filter" value="Go" id="goo">
-           
+          
               </form>
 <br/><br/> 
 <div class="content">
@@ -33,30 +33,64 @@ if($this->uri->segment(2)=="company_data" || $this->uri->segment(2)=="company_da
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="card bootstrap-table">
-                                <div class="card-body table-full-width">
+                                <div class="card-body   ">
               <div class="table-responsive">  
               <table class="table table-hover"  >  
                <thead>
-                <tr  >  
-                       
-                     <th scope="col" >#</th>
-                       
-                     <th scope="col">Logo</th>  
-                     <th scope="col">Organization</th>  
-                     <th scope="col">Industry</th> 
-                     <th scope="col">Sector</th> 
-                     <th scope="col">Address</th>
-                     <th scope="col">Phone</th>
-                     <th scope="col">Mobile</th>  
-                     <th scope="col">Website</th>  
-                     <th scope="col">Facebook</th>  
-                     <th scope="col">CEO</th>  
-                     <th scope="col">skype</th>  
-                     <th scope="col">CEO Email</th>  
-                     <th scope="col">Focal Name</th>  
-                     <th scope="col">NTN</th>  
-                     <th scope="col">Employee ID</th>  
+                <tr> 
+                 <div class="row">
+                       <div class="col">
+                        
+                     <th>#</th>
+                 
+                       </div>
+                       <div class="col">
 
+                     <th >Logo</th>  
+                   </div>
+                   <div class="col">
+                     <th  >Organization</th> 
+                     </div> 
+                     <div class="col">
+                     <th >Industry</th> 
+                   </div>
+                   <div class="col">
+                     <th >Sector</th> 
+                   </div>
+                   <div class="col">
+                     <th>Address</th>
+                   </div>
+                   <div class="col">
+                     <th>Phone</th>
+                   </div>
+                   <div class="col">
+                     <th>Mobile</th>  
+                   </div>
+                   <div class="col">
+                     <th >Website</th> 
+                     </div>
+                     <div class="col"> 
+                     <th  >Facebook</th> 
+                     </div>
+                     <div class="col"> 
+                     <th >CEO</th>  
+                   </div>
+                   <div class="col">
+                     <th >skype</th>  
+                   </div>
+                   <div class="col">
+                     <th >CEO Email</th> 
+                     </div>
+                     <div class="col"> 
+                     <th >Focal Name</th> 
+                     </div>
+                     <div class="col"> 
+                     <th >NTN</th>  
+                   </div>
+                   <div class="col">
+                     <th >Employee ID</th> 
+                     </div> 
+</div>
                 </tr> 
                 </thead> 
            <?php  

@@ -1,17 +1,5 @@
- <script>
-$(document).ready(function(){
-    $("header").hide();
-});
-</script>
- 
-<div class="container">
-          <nav class="navbar navbar-expand-sm navbar-transparent">
-            <a class="navbar-brand" href="#">TALENT MANIA</a>
-            <input type="button" id="logoutbutton" class="btn btn-link"> <a href="<?php echo base_url()?>welcome/logout">Logout</a>
-              </nav>
-     </div>
- 
-<br /><br /><br /><br /><h3 id="mainhead" align="center">Welcome to Talent Mania</h2>
+
+<h3 id="mainhead" align="center">Welcome to Talent Mania</h2>
  <p align="center">Lets’s start your profile, personalize your job listings and find companies you’ll love.</p>
 <div id='jobseeker_dashboard'>
 <form action="<?php echo base_url();?>welcome/validation" id="jobseeker_info" method="post" enctype="multipart/form-data">
@@ -36,8 +24,6 @@ $(document).ready(function(){
   }
   
   ?>   -->
-
-
 <div class="container">
     <div class="picture-container">
         <div class="picture">

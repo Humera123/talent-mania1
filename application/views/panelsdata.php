@@ -11,17 +11,18 @@
  if ($this->uri->segment(2)=="panel_data" || $this->uri->segment(2)=="panel_data_filter")
 {
     ?>
-    <h3 id="mainhead"  >Panel Data</h3><br />  <br/>
+    <h3 id="mainhead"  >Panel Data</h3><br />  
             <form class="form-inline" action="<?php echo base_url() . 'Paneldatatable/panel_data_filter'; ?>" method="post">
-                <div id="searchfilterandgocontrols">
+                 
                 <select class="form-control" name="field" id="filtered">
                   <option selected="selected" disabled="disabled" value="">Filter By</option>
                   <option <?php if (isset($_POST["field"]) && $_POST["field"]=="first_name" && !empty($_POST['search'])) echo "selected"?> value="first_name"> First Name </option>
                   <option <?php if (isset($_POST["field"]) && $_POST["field"]=="last_name" && !empty($_POST['search'])) echo "selected"?>value="last_name"> Last Name </option>
                   <option <?php if (isset($_POST["field"]) && $_POST["field"]=="pskill_name" && !empty($_POST['search'])) echo "selected"?>value="pskill_name">Skills </option>
                 </select>
+                <br/>
                 <input class="form-control" type="text" id="search" name="search" value="<?php echo isset($_POST['search']) ? $_POST['search'] : '' ?>" placeholder="Search...">
-            </div>
+            
                 <input class="btn btn-default" type="submit" name="filter" value="Go" id="goo">
               </form>
 <br/><br/>
@@ -34,15 +35,15 @@
               <div class="table-responsive">  
               <table class="table table-hover table-fixed">  
                 <tr>  
-                     <th scope="col" >Panelid</th>  
-                     <th scope="col">Profileimage</th>
-                     <th scope="col">First_name</th>  
-                     <th scope="col">Last_name</th> 
-                     <th scope="col">Mobileno</th> 
+                     <th scope="col" >Panel Id</th>  
+                     <th scope="col">Profile Image</th>
+                     <th scope="col">First Name</th>  
+                     <th scope="col">Last Name</th> 
+                     <th scope="col">Mobile No</th> 
                      <th scope="col">City</th>
                      <th scope="col">Country</th>
-                     <th scope="col">Skype_id</th>  
-                     <th scope="col">Linkedin_profile</th> 
+                     <th scope="col">Skype Id</th>  
+                     <th scope="col">LinkedIn Profile</th> 
                      <th scope="col">Panel Skills </th>              
                      <th scope="col">Panel Experience </th> 
                      <th scope="col">Panel Education </th> 

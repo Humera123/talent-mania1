@@ -12,7 +12,8 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="<?php echo base_url(); ?>assets/index.html"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                        <i class="menu-icon fa fa-dashboard">
+                        <a href="<?php echo base_url()?>admindashboard"> </i>Dashboard </a>
                     </li>
                     <h3 class="menu-title">Data Tables</h3><!-- /.menu-title -->
                     <!-- <li class="menu-item-has-children dropdown">

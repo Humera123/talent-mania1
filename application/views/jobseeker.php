@@ -1,5 +1,4 @@
 
-
 <?php 
    if($this->session->flashdata('true'))
    {
@@ -9,9 +8,15 @@
 <?php    
 }
 ?>
-<br>
+ 
+<div class="profiletag">
+ <p id="profilepara">	
+Building out your profile on Talent Mania helps us to better customize job opportunities for you, share relevant company review and salary information, and allows you to be discovered by employers.
+</p>
+</div>
+<a href="<?php echo site_url('welcome'); ?>" class="button" id ="bplink"> Build Your Profile</a>
+<!--<a id="buildyourprofile" href="<?php echo site_url('welcome'); ?>">Build your Profile</a> -->
 
-<a href="<?php echo site_url('welcome'); ?>">Build your Profile</a> 
 <!-- <?php if($getApproval['approval'] > 0): ?>
 <a href="<?php echo site_url('skillendorsed'); ?>">Skill Endorsement</a>
 <a href="<?php echo site_url('followcompany'); ?>">Follow Company</a> 
@@ -26,3 +31,7 @@
 <?php elseif($getApproval['approval'] == 3):?>
     <img src="<?php echo base_url(); ?>images/bronze_seal.jpg" alt="bronze">
 <?php endif; ?> -->
+
+ 
+    
+     

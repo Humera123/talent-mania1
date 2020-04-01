@@ -162,9 +162,8 @@ border: 2px solid #007d91;
   .fa, .far, .fas {
     font-weight: 900;
     font-size: 29px;
-    color: white;
+    color: #007d91;
     border: 2px solid #ffffff;
-     
     padding-top: 6px;
     padding-left: 5px;
     padding-right: 5px;

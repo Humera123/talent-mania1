@@ -35,7 +35,7 @@ class Companydashboard extends CI_Controller {
 
 	function index()
 	{
-		$this->load->view('templates/header');
+		$this->load->view('templates/profileheader');
 		if($this->session->userdata('id'))
 		{
 			$id=$this->session->userdata('id');

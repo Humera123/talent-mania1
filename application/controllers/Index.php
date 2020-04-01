@@ -40,17 +40,24 @@ class Index extends CI_Controller {
  }
 
  function jobseekerdashboard(){
+    $this->load->view('templates/profileheader');
    $data['getApproval'] = $this->index_model->getApproval($this->session->userdata('id'));
    $this->load->view('jobseeker',$data);
+    $this->load->view('templates/footer');
+
   
  }
 
  function companydashboard(){
+   $this->load->view('templates/profileheader');
     $this->load->view('company');
+      $this->load->view('templates/footer');
  }
 
  function paneldashboard(){
+  $this->load->view('templates/profileheader');
     $this->load->view('panel');
+    $this->load->view('templates/footer');
  }
 
  function admindashboard(){

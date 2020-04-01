@@ -8,9 +8,11 @@
 <?php    
 }
 ?>
+  
+<section class="companysection">	 
+<a href="<?php echo site_url('companydashboard'); ?>" class="companybutton" id ="bplink">Build Your Profile</a> 
+<a href="<?php echo site_url('addjob'); ?>" class="companybutton" id ="bplink">Add a Job</a>
+<a href="<?php echo site_url('recuriters'); ?>"class="companybutton" id ="bplink" >Recuriters</a>
 
-<br>
-<a href="<?php echo site_url('companydashboard'); ?>">Build Profile</a> 
-<a href="<?php echo site_url('addjob'); ?>">Add Job</a>
-<a href="<?php echo site_url('recuriters'); ?>">Recuriters</a>
+</section>
  

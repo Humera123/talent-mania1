@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Welcome extends CI_Controller{
 
 	/**
 	 * Index Page for this controller.
@@ -39,7 +39,7 @@ class Welcome extends CI_Controller {
 
 	function index()
 	{
-		$this->load->view('templates/header');
+		$this->load->view('templates/profileheader');
 		if($this->session->userdata('id'))
 		{
 			$id=$this->session->userdata('id');
