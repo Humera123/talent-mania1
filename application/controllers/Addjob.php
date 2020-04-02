@@ -17,13 +17,13 @@ class Addjob extends CI_Controller {
 
 	function index()
 	{
-        $this->load->view('templates/header');
+        $this->load->view('templates/profileheader');
 		$this->load->view('addjob');
 		$this->load->view('templates/footer');
 	}
 
 	function company(){
-		$this->load->view('templates/header');
+		$this->load->view('templates/profileheader');
 		$this->load->view('company');
 		$this->load->view('templates/footer');
 	}

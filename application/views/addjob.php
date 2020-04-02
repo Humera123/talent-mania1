@@ -1,54 +1,77 @@
-<br />
-<h3 align="center">Complete User Registration and Login System in Codeigniter</h3>
 
-<div id='addjob_dashboard'>
+
+ 
+<section class="companydashboardsection">
+<div id='companydashboard'>
+   <br/><br /><br /><h3 id="mainhead" align="center">Welcome to Talent Mania</h3>
+<p id="companytagline" align="center"  >Lets’s build your profile.</p>
+<br/>
+<div class="card">
+  <div class="card-body">
   <?php echo form_open('addjob/validation', array('id' => 'addjob_info')) ?>
-  <p><input placeholder="Job Title..." type="text" name="job_title" id="job_title" class="form-control" value="<?php echo set_value('job_title'); ?>" />
-    <span class="text-danger"><?php echo form_error('job_title'); ?></span></p>
-  <p><input placeholder="Job Description..." type="text" name="job_desc" id="job_desc" class="form-control" value="<?php echo set_value('job_desc'); ?>" />
-    <span class="text-danger"><?php echo form_error('job_desc'); ?></span></p>
-  <p><input placeholder="What skills are required for this job..." name="skills_required" id="basics" class="form-control" value="<?php echo set_value('skills_required'); ?>" />
-    <span class="text-danger"><?php echo form_error('skills_required'); ?></span></p>
+  <p><label for="job_title">Job Title</label>
+    <input type="text" name="job_title" id="job_title" class="form-control" value="<?php echo set_value('job_title'); ?>" />
+    <span class="text-danger"><?php echo form_error('job_title'); ?></span>
+  </p>
+
+  <p><label for="job_desc">Job Description</label>
+    <input  type="text" name="job_desc" id="job_desc" class="form-control" value="<?php echo set_value('job_desc'); ?>" />
+    <span class="text-danger"><?php echo form_error('job_desc'); ?></span>
+  </p>
+  <p>
+    <label for="basics">Skills required for This Job</label>
+    <input  name="skills_required" id="basics" class="form-control" value="<?php echo set_value('skills_required'); ?>" />
+    <span class="text-danger"><?php echo form_error('skills_required'); ?></span>
     <div id="skill_set"></div>
     <p id="total_skills"></p>
-    <p><select name="career_level" id="career_level" class="form-control" value="<?php echo set_value('career_level'); ?>">
-      <option value="1">Intern/Student</option>
-      <option value="2">Entery Level</option>
-      <option value="3">Experienced Professional</option>
-      <option value="4">Department Head</option>
-      <option value="5">GM/CEO/Country Head/President</option>
+  </p>
+    <p><label for="career_level"> Select Career Level</label>
+      <select name="career_level" id="career_level" class="form-control" value="<?php echo set_value('career_level'); ?>">
+      <option value="1">Select</option>
+      <option value="2">Intern/Student</option>
+      <option value="3">Entery Level</option>
+      <option value="4">Experienced Professional</option>
+      <option value="5">Department Head</option>
+      <option value="6">GM/CEO/Country Head/President</option>
+
     </select>
     <span class="text-danger"><?php echo form_error('career_level'); ?></span>
   </p>
-  <p><input placeholder="N0. of Positions..." type="text" name="position" id="position" class="form-control" value="<?php echo set_value('position'); ?>" />
+  <p>
+    <label for="position">No of Positions</label><input type="text" name="position" id="position" class="form-control" value="<?php echo set_value('position'); ?>" />
     <span class="text-danger"><?php echo form_error('position'); ?></span></p>
-  <p><input placeholder="Job Location..." type="text" name="job_location" id="job_location" class="form-control" value="<?php echo set_value('job_location'); ?>" />
+  <p><label for="job_location"> Job Location</label>
+    <input type="text" name="job_location" id="job_location" class="form-control" value="<?php echo set_value('job_location'); ?>" />
     <span class="text-danger"><?php echo form_error('job_location'); ?></span></p>
 
-  <p>What minimum qualification is required?...</p>
-  <p><select name="qualification" id="qualification" class="form-control" value="<?php echo set_value('qualification'); ?>">
-      <option value="1">Non-Matriculation</option>
-      <option value="2">Matriculation/O-level</option>
-      <option value="3">Intermediate/A-level</option>
-      <option value="4">Bachelor</option>
-      <option value="5">Master</option>
-      <option value="6">MBBS/D-Pharm/BDS</option>
-      <option value="7">M-Phill</option>
-      <option value="8">PHD/Doctorate</option>
-      <option value="9">Certification</option>
-      <option value="10">Diploma</option>
+  <p> <label for="qualification">Minimum Qualification</label>
+    <select name="qualification" id="qualification" class="form-control" value="<?php echo set_value('qualification'); ?>">
+    <option value="1">Select</option>
+      <option value="2">Non-Matriculation</option>
+      <option value="3">Matriculation/O-level</option>
+      <option value="4">Intermediate/A-level</option>
+      <option value="5">Bachelor</option>
+      <option value="6">Master</option>
+      <option value="7">MBBS/D-Pharm/BDS</option>
+      <option value="8">M-Phill</option>
+      <option value="9">PHD/Doctorate</option>
+      <option value="10">Certification</option>
+      <option value="11">Diploma</option>
     </select>
+  </p>
     <span class="text-danger"><?php echo form_error('qualification'); ?></span>
+    <p><label for="qualification_range"> Qualification Range</label>
     <select name="qualification_range" id="qualification_range" class="form-control" value="<?php echo set_value('qualification_range'); ?>">
-      <option value="1">or higher</option>
-      <option value="2">Exactly</option>
+      <option value="">Select</option>
+      <option value="1">Higher Education</option>
+      <option value="2">Exact</option>
     </select>
     <span class="text-danger"><?php echo form_error('qualification_range'); ?></span>
   </p>
 
-  <p>Years of experience required?...</p>
-  <p><select name="min_experience" id="min_experience" class="form-control" value="<?php echo set_value('min_experience'); ?>">
-      <option value="">Min</option>
+  <p><label for="min_experience">Minimum Experience</label>
+    <select name="min_experience" id="min_experience" class="form-control" value="<?php echo set_value('min_experience'); ?>">
+      <option value="">Select</option>
       <option value="0">Fresh</option>
       <option value="37">Less than 1 Year</option>
       <option value="1">1 Year</option>
@@ -88,9 +111,11 @@
       <option value="35">35 Years</option>
       <option value="36">More than 35 Years</option>
     </select>
+  </p>
     <span class="text-danger"><?php echo form_error('min_experience'); ?></span>
+    <p><label for="max_experience">Maximum Experience</label>
     <select name="max_experience" id="max_experience" class="form-control" value="<?php echo set_value('max_experience'); ?>">
-      <option value="">Max</option>
+      <option value="">Select</option>
       <option value="0">Fresh</option>
       <option value="37">Less than 1 Year</option>
       <option value="1">1 Year</option>
@@ -133,9 +158,9 @@
     <span class="text-danger"><?php echo form_error('max_experience'); ?></span>
   </p>
 
-  <p>Salary Range...</p>
-  <p><select name="min_salary" id="min_salary" class="form-control" value="<?php echo set_value('min_salary'); ?>">
-      <option value="">From</option>
+  <p><label for ="min_salary"> Minimum Salary </label>
+    <select name="min_salary" id="min_salary" class="form-control" value="<?php echo set_value('min_salary'); ?>">
+      <option value="">Select</option>
       <option value="5000">5,000</option>
       <option value="6000">6,000</option>
       <option value="7000">7,000</option>
@@ -184,9 +209,13 @@
       <option value="950000">950,000</option>
       <option value="1000000">1,000,000</option>
       <option value="1000001">1,000,000+</option>
-    </select> <span class="text-danger"><?php echo form_error('min_salary'); ?></span>
+
+    </select>
+    </p>
+     <span class="text-danger"><?php echo form_error('min_salary'); ?></span>
+     <p><label for ="max_salary">Maximum Salary</label>
     <select name="max_salary" id="max_salary" class="form-control" value="<?php echo set_value('max_salary'); ?>">
-      <option value="">To</option>
+      <option value="">Select</option>
       <option value="5000">5,000</option>
       <option value="6000">6,000</option>
       <option value="7000">7,000</option>
@@ -238,9 +267,9 @@
     </select>
     <span class="text-danger"><?php echo form_error('max_salary'); ?></span>
   </p>
-  <p>Is there a gender prefrence?</p>
-  <p>
+  <p><label for="gender"> Gender Preference</label>
     <select name="gender" id="gender" class="form-control" value="<?php echo set_value('gender'); ?>">
+      <option value="">Select</option>
       <option value="0">None</option>
       <option value="1">Female</option>
       <option value="2">Male</option>
@@ -248,10 +277,13 @@
     <span class="text-danger"><?php echo form_error('gender'); ?></span>
   </p>
 
-  <p><input type="submit" name="Submit" value="Submit" class="btn btn-info" /></p>
+  <p><input type="submit" name="Submit" value="Submit" class="btn btn-info" id="companysubmit"/></p>
   <?php echo form_close() ?>
+  </div>
+ </form>
 </div>
-
+</div>
+ </section>
 <script>
    var options = {
     url: "<?php echo base_url()?>js/skillsset.json",

@@ -37,7 +37,7 @@ class Recuriters extends CI_Controller {
 
 	function index()
 	{
-		$this->load->view('templates/header');
+		$this->load->view('templates/profileheader');
 		$data['alljob'] = $this->recuriters_model->getJob($this->session->userdata('id'));
 		$this->load->view('recuriters',$data);
 		$this->load->view('templates/footer');

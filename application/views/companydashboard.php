@@ -1,6 +1,4 @@
 
-
-
 <section class="companydashboardsection">
 <div id='companydashboard'>
    <br/><br /><br /><h3 id="mainhead" align="center">Welcome to Talent Mania</h3>

@@ -1,6 +1,8 @@
+ 
+
 <?php
 
-if(count($alljob) > 0){
+if(count($alljob) >0){
     foreach($alljob as $row){
         $output = "<h3 class='text-primary'>$row->job_title</h3>";
         $output .= "<a href='#' id='$row->jobid' onclick='loadrecuriters($row->jobid,$row->career_level,$row->qualification,$row->gender)'>see recuriters </a>";
