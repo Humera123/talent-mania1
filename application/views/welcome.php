@@ -1,43 +1,44 @@
 
-<h3 id="mainhead" align="center">Welcome to Talent Mania</h2>
- <p align="center">Lets’s start your profile, personalize your job listings and find companies you’ll love.</p>
-<div id='jobseeker_dashboard'>
+<section class="companydashboardsection">
+<div id='companydashboard'>
+   <br/><br /><br /><h3 id="mainhead" align="center">Welcome to Talent Mania</h3>
+ <p  id="companytagline" align="center">Lets’s start your profile, personalize your job listings and find companies you’ll love.</p>
+<br/>
+<div class="card">
+  <div class="card-body">
 <form action="<?php echo base_url();?>welcome/validation" id="jobseeker_info" method="post" enctype="multipart/form-data">
-  <!--
+
  <?php 
   if($form['pimage'])
   {
   ?>
    <p class="float-left"><label>Profile Image :</label>
-  <img src="<?php echo base_url().'uploads/'.$form['pimage'] ?>" name="profileimg" id="profileimg" width="100"alt="Profile Image" /></p>
+  <img src="<?php echo base_url().'uploads/'.$form['pimage'] ?>" name="profileimg" id="profileimg" width="100" height="100"/></p>
   <input type="hidden" name="image_value" id= "image_value" value="<?php echo set_value('pimage', $form['pimage']); ?>"/>
   <?php
 }
   else
   {
     ?>
-    <p id="ch" class="float-left"><label> Upload Profile Image :</label>
+
+    <p id="ch" class="float-left"><label> Upload Your Profile Image :</label>
+      <div class="container">
+    <div class="picture-container">
+    <div class="picture">
   <input type="file" name="proimage" accept="image/*" onchange="loadimage(event,'profileimg')" />
-  <img name="profileimg" id="profileimg" width="100"alt="Profile Image" />
-  <span class="text-danger"><?php echo form_error('image_value'); ?></span></p>
+  <img   src="https://lh3.googleusercontent.com/LfmMVU71g-HKXTCP_QWlDOemmWg4Dn1rJjxeEsZKMNaQprgunDTtEuzmcwUBgupKQVTuP0vczT9bH32ywaF7h68mF-osUSBAeM6MxyhvJhG6HKZMTYjgEv3WkWCfLB7czfODidNQPdja99HMb4qhCY1uFS8X0OQOVGeuhdHy8ln7eyr-6MnkCcy64wl6S_S6ep9j7aJIIopZ9wxk7Iqm-gFjmBtg6KJVkBD0IA6BnS-XlIVpbqL5LYi62elCrbDgiaD6Oe8uluucbYeL1i9kgr4c1b_NBSNe6zFwj7vrju4Zdbax-GPHmiuirf2h86eKdRl7A5h8PXGrCDNIYMID-J7_KuHKqaM-I7W5yI00QDpG9x5q5xOQMgCy1bbu3St1paqt9KHrvNS_SCx-QJgBTOIWW6T0DHVlvV_9YF5UZpN7aV5a79xvN1Gdrc7spvSs82v6gta8AJHCgzNSWQw5QUR8EN_-cTPF6S-vifLa2KtRdRAV7q-CQvhMrbBCaEYY73bQcPZFd9XE7HIbHXwXYA=s200-no"   name="profileimg" id="profileimg" width="100" height="100"/>
+   </div>
+    </div>
+</div>
+</p>
+  <p><span class="text-danger"><?php echo form_error('image_value'); ?></span></p>
 <?php
   }
   
-  ?>   -->
-<div class="container">
-    <div class="picture-container">
-        <div class="picture">
-            <img src="https://lh3.googleusercontent.com/LfmMVU71g-HKXTCP_QWlDOemmWg4Dn1rJjxeEsZKMNaQprgunDTtEuzmcwUBgupKQVTuP0vczT9bH32ywaF7h68mF-osUSBAeM6MxyhvJhG6HKZMTYjgEv3WkWCfLB7czfODidNQPdja99HMb4qhCY1uFS8X0OQOVGeuhdHy8ln7eyr-6MnkCcy64wl6S_S6ep9j7aJIIopZ9wxk7Iqm-gFjmBtg6KJVkBD0IA6BnS-XlIVpbqL5LYi62elCrbDgiaD6Oe8uluucbYeL1i9kgr4c1b_NBSNe6zFwj7vrju4Zdbax-GPHmiuirf2h86eKdRl7A5h8PXGrCDNIYMID-J7_KuHKqaM-I7W5yI00QDpG9x5q5xOQMgCy1bbu3St1paqt9KHrvNS_SCx-QJgBTOIWW6T0DHVlvV_9YF5UZpN7aV5a79xvN1Gdrc7spvSs82v6gta8AJHCgzNSWQw5QUR8EN_-cTPF6S-vifLa2KtRdRAV7q-CQvhMrbBCaEYY73bQcPZFd9XE7HIbHXwXYA=s200-no" class="picture-src" id="wizardPicturePreview" title="">
-            <input type="file" id="wizard-picture" class="">
-        </div>
-        <br>
-         <h6 class="">Upload Image</h6>
-
-    </div>
-</div></br>
+  ?> 
   <p>
      <label for="first_name">First Name</label>
-     <input  type="text" name="first_name" id="first_name" class="form-control" value="<?php echo set_value('first_name', $form['first_name']); ?>" />
+     <input  type="text"   name="first_name" id="first_name" class="form-control" value="<?php echo set_value('first_name', $form['first_name']); ?>" />
       <span class="text-danger"><?php echo form_error('first_name'); ?></span>
     </p>
 
@@ -101,62 +102,15 @@
   <p>
      <label for="gender">Gender</label>
     <select name="gender" id="gender" class="form-control" value="<?php echo set_value('gender'); ?>">
+      <option value=""> Select</option>
       <option value="1">Female</option>
       <option value="2">Male</option>
       <option value="3">Not Specified</option>
     </select>
     <span class="text-danger"><?php echo form_error('gender'); ?></span>
   </p>
+ 
 
-<br>
-<!for cnic front image upload-->
-
-<main class="main_full">
-  <div class="container">
-    <div class="panel">
-      <div class="button_outer">
-        <div class="btn_upload">
-          <input type="file" id="upload_file" name="">
-          Upload front CNIC Image
-        </div>
-        <div class="processing_bar"></div>
-        <div class="success_box"></div>
-      </div>
-    </div>
-    <div class="error_msg"></div>
-    <div class="uploaded_file_view" id="uploaded_view">
-      <span class="file_remove">X</span>
-    </div>
-  </div>
-</main>
-
-
-<script>
-var btnUpload = $("#upload_file"),
-    btnOuter = $(".button_outer");
-  btnUpload.on("change", function(e){
-    var ext = btnUpload.val().split('.').pop().toLowerCase();
-    if($.inArray(ext, ['gif','png','jpg','jpeg']) == -1) {
-      $(".error_msg").text("Not an Image...");
-    } else {
-      $(".error_msg").text("");
-      btnOuter.addClass("file_uploading");
-      setTimeout(function(){
-        btnOuter.addClass("file_uploaded");
-      },3000);
-      var uploadedFile = URL.createObjectURL(e.target.files[0]);
-      setTimeout(function(){
-        $("#uploaded_view").append('<img src="'+uploadedFile+'" />').addClass("show");
-      },3500);
-    }
-  });
-  $(".file_remove").on("click", function(e){
-    $("#uploaded_view").removeClass("show");
-    $("#uploaded_view").find("img").remove();
-    btnOuter.removeClass("file_uploading");
-    btnOuter.removeClass("file_uploaded");
-  });
-</script>
 
 <?php 
   if($form['cnic_front'])
@@ -165,24 +119,29 @@ var btnUpload = $("#upload_file"),
    <p><label>CNIC Front Image :</label>
    <img src="<?php echo base_url().'uploads/'.$form['cnic_front'] ?>" name="fcnicimage" id="fcnicimage" width="100"alt="Front CNIC image" /></p>
   <input type="hidden" name="cnic_front_value" id= "cnic_front_value" value="<?php echo set_value('cnic_front', $form['cnic_front']); ?>"/>
-  <br>
   <?php
 }
 
   else
   {
     ?>
-   <p>
+   <p id="ch" class="float-left">
     <label> Upload CNIC Front Image :</label>
-    <!-- <img name="fcnicimage" id="fcnicimage" width="100" alt="Front CNIC image" /></p>-->
+     <div class="container">
+    <div class="picture-container">
+    <div class="picture">
   <input type="file" name="cnic_front" id="cnic_front" accept="image/gif, image/jpeg, image/png" onchange="loadimage(event,'fcnicimage')">
+     <img   src="https://lh3.googleusercontent.com/LfmMVU71g-HKXTCP_QWlDOemmWg4Dn1rJjxeEsZKMNaQprgunDTtEuzmcwUBgupKQVTuP0vczT9bH32ywaF7h68mF-osUSBAeM6MxyhvJhG6HKZMTYjgEv3WkWCfLB7czfODidNQPdja99HMb4qhCY1uFS8X0OQOVGeuhdHy8ln7eyr-6MnkCcy64wl6S_S6ep9j7aJIIopZ9wxk7Iqm-gFjmBtg6KJVkBD0IA6BnS-XlIVpbqL5LYi62elCrbDgiaD6Oe8uluucbYeL1i9kgr4c1b_NBSNe6zFwj7vrju4Zdbax-GPHmiuirf2h86eKdRl7A5h8PXGrCDNIYMID-J7_KuHKqaM-I7W5yI00QDpG9x5q5xOQMgCy1bbu3St1paqt9KHrvNS_SCx-QJgBTOIWW6T0DHVlvV_9YF5UZpN7aV5a79xvN1Gdrc7spvSs82v6gta8AJHCgzNSWQw5QUR8EN_-cTPF6S-vifLa2KtRdRAV7q-CQvhMrbBCaEYY73bQcPZFd9XE7HIbHXwXYA=s200-no" name="fcnicimage" id="fcnicimage" width="100" height="100" alt="Front CNIC image" />
+   </div>
+ </div>
+</div>
+</p>
   <p><span class="text-danger"><?php echo form_error('cnic_front'); ?></span></p>
 <?php
   }
   
   ?> 
 
-<br>
 <?php 
   if($form['cnic_back'])
   {
@@ -195,10 +154,18 @@ var btnUpload = $("#upload_file"),
   else
   {
     ?>
-   <p>
+   <p id="ch" class="float-left">
     <label> Upload CNIC Back Image   :</label>
-    <!--<img name="bcnicimage" id="bcnicimage" width="100"alt="Back CNIC image" /></p>-->
-  <input type="file" name="cnic_back" id="cnic_back" accept="image/gif, image/jpeg, image/png" onchange="loadimage(event,'bcnicimage')">
+    <div class="container">
+    <div class="picture-container">
+    <div class="picture">
+      <input type="file" name="cnic_back" id="cnic_back" accept="image/gif, image/jpeg, image/png" onchange="loadimage(event,'bcnicimage')">
+  <img   src="https://lh3.googleusercontent.com/LfmMVU71g-HKXTCP_QWlDOemmWg4Dn1rJjxeEsZKMNaQprgunDTtEuzmcwUBgupKQVTuP0vczT9bH32ywaF7h68mF-osUSBAeM6MxyhvJhG6HKZMTYjgEv3WkWCfLB7czfODidNQPdja99HMb4qhCY1uFS8X0OQOVGeuhdHy8ln7eyr-6MnkCcy64wl6S_S6ep9j7aJIIopZ9wxk7Iqm-gFjmBtg6KJVkBD0IA6BnS-XlIVpbqL5LYi62elCrbDgiaD6Oe8uluucbYeL1i9kgr4c1b_NBSNe6zFwj7vrju4Zdbax-GPHmiuirf2h86eKdRl7A5h8PXGrCDNIYMID-J7_KuHKqaM-I7W5yI00QDpG9x5q5xOQMgCy1bbu3St1paqt9KHrvNS_SCx-QJgBTOIWW6T0DHVlvV_9YF5UZpN7aV5a79xvN1Gdrc7spvSs82v6gta8AJHCgzNSWQw5QUR8EN_-cTPF6S-vifLa2KtRdRAV7q-CQvhMrbBCaEYY73bQcPZFd9XE7HIbHXwXYA=s200-no"  name="bcnicimage" id="bcnicimage" width="100" height="100" alt="Back CNIC image" />
+</div>
+</div>
+</div>
+</p>
+  
   
   <p><span class="text-danger"><?php echo form_error('cnic_back'); ?></span></p>
 <?php
@@ -209,7 +176,6 @@ var btnUpload = $("#upload_file"),
 
 
 
-<br>
  <?php 
   if($form['last_degree'])
   {
@@ -222,21 +188,33 @@ var btnUpload = $("#upload_file"),
   else
   {
     ?>
-   <p>
+   <p id="ch" class="float-left" >
     <label> Upload Last Degree Image:</label>
-     <!--<img name="lastdegreeimg" id="lastdegreeimg" width="100"alt=" Latest Degree Image"/>-->
+    <div class="container">
+    <div class="picture-container">
+    <div class="picture">
   <input type="file" name="last_degree" id="last_degree" accept="image/gif, image/jpeg, image/png" onchange="loadimage(event,'lastdegreeimg')">
+  <img src="https://lh3.googleusercontent.com/LfmMVU71g-HKXTCP_QWlDOemmWg4Dn1rJjxeEsZKMNaQprgunDTtEuzmcwUBgupKQVTuP0vczT9bH32ywaF7h68mF-osUSBAeM6MxyhvJhG6HKZMTYjgEv3WkWCfLB7czfODidNQPdja99HMb4qhCY1uFS8X0OQOVGeuhdHy8ln7eyr-6MnkCcy64wl6S_S6ep9j7aJIIopZ9wxk7Iqm-gFjmBtg6KJVkBD0IA6BnS-XlIVpbqL5LYi62elCrbDgiaD6Oe8uluucbYeL1i9kgr4c1b_NBSNe6zFwj7vrju4Zdbax-GPHmiuirf2h86eKdRl7A5h8PXGrCDNIYMID-J7_KuHKqaM-I7W5yI00QDpG9x5q5xOQMgCy1bbu3St1paqt9KHrvNS_SCx-QJgBTOIWW6T0DHVlvV_9YF5UZpN7aV5a79xvN1Gdrc7spvSs82v6gta8AJHCgzNSWQw5QUR8EN_-cTPF6S-vifLa2KtRdRAV7q-CQvhMrbBCaEYY73bQcPZFd9XE7HIbHXwXYA=s200-no" height="100" name="lastdegreeimg" id="lastdegreeimg" width="100"alt=" Latest Degree Image"/>
+</div>
+</div>
+</div>
  </p>
+
   <p><span class="text-danger"><?php echo form_error('last_degree'); ?></span></p>
 <?php
   }
   
   ?>
-  <p><input type="submit" name="Submit" value="Submit" id="formsubmit"/>
+  <br/>
+  <p><input type="submit" name="Submit"  class="ui-m-btn" value="Submit" />
   </p>
   <?php echo form_close()?>
-</div>
 </form>
+</div>
+ </form>
+</div>
+</div>
+ </section>
 
 <script type="text/javascript">
   function loadimage(event,$id) {

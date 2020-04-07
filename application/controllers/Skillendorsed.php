@@ -18,7 +18,7 @@ class Skillendorsed extends CI_Controller
 
 	function index()
 	{
-        $this->load->view('templates/header');
+        $this->load->view('templates/profileheader');
         $data['getSkills'] = $this->skillendrosed_model->getSkill($this->session->userdata('id'));
 		$this->load->view('skillendorsed',$data);
 		$this->load->view('templates/footer');
@@ -29,7 +29,7 @@ class Skillendorsed extends CI_Controller
 
         $id = $this->session->userdata('id');
         $result['data'] = $this->skillendrosed_model->getSkill($id);
-        $this->load->view('templates/header');
+        $this->load->view('templates/profileheader');
     	$this->load->view('panelskillendorse',$result);
     	$this->load->view('templates/footer');
     }

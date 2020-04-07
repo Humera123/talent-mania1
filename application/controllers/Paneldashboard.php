@@ -40,7 +40,7 @@ class Paneldashboard extends CI_Controller {
 
 	function index()
 	{
-		$this->load->view('templates/header');
+		$this->load->view('templates/profileheader');
 		if($this->session->userdata('id'))
 		{
 			$id=$this->session->userdata('id');
@@ -54,7 +54,7 @@ class Paneldashboard extends CI_Controller {
 	}
 
 	function panel(){
-		$this->load->view('templates/header');
+		$this->load->view('templates/profileheader');
 		$this->load->view('panel');
 		$this->load->view('templates/footer');
 	}
