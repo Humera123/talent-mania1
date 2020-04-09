@@ -63,6 +63,27 @@ FB.getLoginStatus(function(response) {   // Called after the JS SDK has been ini
     });
   }
 </script>
+
+<script>
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+}
+</script>
+<a href="#" onclick="signOut();">Sign out</a>
+<script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+</script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="855088736015-2or3qh3tnop56qu33itim0q66d5lo193.apps.googleusercontent.com">
 <section class="sectionone">
   <div class="bannerImage">
       <div class="signup   align-items-center justify-content-center">
@@ -78,10 +99,13 @@ FB.getLoginStatus(function(response) {   // Called after the JS SDK has been ini
                                   <button class="inlinefacebook">
                                     <span class="label">Continue with Facebook</span>
                                  </button>
-                                  <button class="inlinegoogle">
+                                 <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                                  <!--<button class="inlinegoogle">
                                     <span class="label">Continue with Google</span>
-                                  </button>
+                                  </button>-->
                                   </div>
+
+
                                    <div class="orSeparator d-flex align-items-center ">
                                       <div class="borderTop w-100pct my-std">
                                       </div>
@@ -229,3 +253,4 @@ FB.getLoginStatus(function(response) {   // Called after the JS SDK has been ini
   </div>
 </div>                                                           
 </section>
+
